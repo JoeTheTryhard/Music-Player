@@ -1,0 +1,564 @@
+
+
+Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
+                                                                                               Fri Dec 30 19:14:19 2022
+
+Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
+     1                           	processor	10F200
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=ENTRY,merge=1,delta=2
+     5                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1,noexec
+     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     7                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+     8                           	psect	maintext,global,class=CODE,split=1,delta=2
+     9                           	psect	text1,local,class=CODE,merge=1,delta=2
+    10                           	psect	jmp_tab,global,class=ENTRY,delta=2
+    11                           	psect	text2,local,class=CODE,merge=1,delta=2
+    12                           	psect	idloc,global,abs,ovrld,class=IDLOC,space=5,delta=2,noexec
+    13                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
+    14                           	dabs	1,0x1C,4
+    15      000                     
+    16                           ; Version 2.40
+    17                           ; Generated 06/12/2021 GMT
+    18                           ; 
+    19                           ; Copyright © 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    20                           ; All rights reserved.
+    21                           ; 
+    22                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    23                           ; 
+    24                           ; Redistribution and use in source and binary forms, with or without modification, are
+    25                           ; permitted provided that the following conditions are met:
+    26                           ; 
+    27                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    28                           ;        conditions and the following disclaimer.
+    29                           ; 
+    30                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    31                           ;        of conditions and the following disclaimer in the documentation and/or other
+    32                           ;        materials provided with the distribution. Publication is not required when
+    33                           ;        this file is used in an embedded application.
+    34                           ; 
+    35                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    36                           ;        software without specific prior written permission.
+    37                           ; 
+    38                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    39                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    40                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    41                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    42                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    43                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    44                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    45                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    46                           ; 
+    47                           ; 
+    48                           ; Code-generator required, PIC10F200 Definitions
+    49                           ; 
+    50                           ; SFR Addresses
+    51      000                     	;# 
+    52      001                     	;# 
+    53      002                     	;# 
+    54      003                     	;# 
+    55      004                     	;# 
+    56      005                     	;# 
+    57      006                     	;# 
+    58      001                     _TMR0	set	1
+    59      006                     _GPIO	set	6
+    60      000                     _OPTION	set	0
+    61      006                     _TRIS	set	6
+    62                           
+    63                           	psect	cinit
+    64      001                     start_initialization:	
+    65                           ; #config settings
+    66                           
+    67      001                     __initialization:
+    68                           
+    69                           ; Clear objects allocated to BANK0
+    70      001  0078               	clrf	__pbssBANK0& (0+31)
+    71      002  0079               	clrf	(__pbssBANK0+1)& (0+31)
+    72      003  007A               	clrf	(__pbssBANK0+2)& (0+31)
+    73      004  007B               	clrf	(__pbssBANK0+3)& (0+31)
+    74      005                     end_of_initialization:	
+    75                           ;End of C runtime variable initialization code
+    76                           
+    77      005                     __end_of__initialization:
+    78      005  0064               	clrf	4
+    79      006  0A37               	ljmp	_main	;jump to C main() function
+    80                           
+    81                           	psect	bssBANK0
+    82      018                     __pbssBANK0:
+    83      018                     main@F157:
+    84      018                     	ds	2
+    85      01A                     main@F155:
+    86      01A                     	ds	2
+    87                           
+    88                           	psect	cstackCOMMON
+    89      000                     __pcstackCOMMON:
+    90      000                     ??_initialize:
+    91      000                     ??_toggleSound:	
+    92                           ; 1 bytes @ 0x0
+    93                           
+    94                           
+    95                           	psect	cstackBANK0
+    96      010                     __pcstackBANK0:	
+    97                           ; 1 bytes @ 0x0
+    98                           
+    99      010                     ?_initialize:
+   100      010                     ?_toggleSound:	
+   101                           ; 1 bytes @ 0x0
+   102                           
+   103      010                     ?_main:	
+   104                           ; 1 bytes @ 0x0
+   105                           
+   106      010                     toggleSound@pinNumber:	
+   107                           ; 1 bytes @ 0x0
+   108                           
+   109                           
+   110                           ; 1 bytes @ 0x0
+   111      010                     	ds	1
+   112      011                     toggleSound@initialTMR0:
+   113                           
+   114                           ; 1 bytes @ 0x1
+   115      011                     	ds	1
+   116      012                     toggleSound@sound:
+   117                           
+   118                           ; 1 bytes @ 0x2
+   119      012                     	ds	1
+   120      013                     ??_main:
+   121                           
+   122                           ; 1 bytes @ 0x3
+   123      013                     	ds	1
+   124      014                     main@track1:
+   125                           
+   126                           ; 2 bytes @ 0x4
+   127      014                     	ds	2
+   128      016                     main@track2:
+   129                           
+   130                           ; 2 bytes @ 0x6
+   131      016                     	ds	2
+   132                           
+   133                           	psect	maintext
+   134      037                     __pmaintext:	
+   135 ;;
+   136 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   137 ;;
+   138 ;; *************** function _main *****************
+   139 ;; Defined at:
+   140 ;;		line 49 in file "main.c"
+   141 ;; Parameters:    Size  Location     Type
+   142 ;;		None
+   143 ;; Auto vars:     Size  Location     Type
+   144 ;;  track2          2    6[BANK0 ] struct Sound
+   145 ;;  track1          2    4[BANK0 ] struct Sound
+   146 ;; Return value:  Size  Location     Type
+   147 ;;                  1   19[None  ] void 
+   148 ;; Registers used:
+   149 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+0, btemp+2, btemp+3, pclath, cstack
+   150 ;; Tracked objects:
+   151 ;;		On entry : B00/0
+   152 ;;		On exit  : 0/0
+   153 ;;		Unchanged: 0/0
+   154 ;; Data sizes:     COMMON   BANK0
+   155 ;;      Params:         0       0
+   156 ;;      Locals:         0       4
+   157 ;;      Temps:          0       1
+   158 ;;      Totals:         0       5
+   159 ;;Total ram usage:        5 bytes
+   160 ;; Hardware stack levels required when called: 1
+   161 ;; This function calls:
+   162 ;;		_initialize
+   163 ;;		_toggleSound
+   164 ;; This function is called by:
+   165 ;;		Startup code after reset
+   166 ;; This function uses a non-reentrant model
+   167 ;;
+   168                           
+   169      037                     _main:	
+   170                           ;psect for function _main
+   171                           
+   172      037                     l579:	
+   173                           ;incstack = 0
+   174                           ; Regs used in _main: [wreg-fsr0h+status,2-btemp+0+btemp+2+btemp+3+pclath+cstack]
+   175                           
+   176                           
+   177                           ;main.c: 51:     initialize();
+   178      037  09FE               	fcall	entry__initialize
+   179      038                     l581:
+   180                           
+   181                           ;main.c: 52:     struct Sound track1 = {10, TMR0};
+   182      038  021B               	movf	main@F155+1,w
+   183      039  0035               	movwf	main@track1+1
+   184      03A  021A               	movf	main@F155,w
+   185      03B  0034               	movwf	main@track1
+   186      03C                     l583:
+   187      03C  0C0A               	movlw	10
+   188      03D  0034               	movwf	main@track1
+   189      03E                     l585:
+   190      03E  0201               	movf	1,w	;volatile
+   191      03F  0035               	movwf	main@track1+1
+   192      040                     l587:
+   193                           
+   194                           ;main.c: 53:     struct Sound track2 = {3, TMR0};
+   195      040  0219               	movf	main@F157+1,w
+   196      041  0037               	movwf	main@track2+1
+   197      042  0218               	movf	main@F157,w
+   198      043  0036               	movwf	main@track2
+   199      044                     l589:
+   200      044  0C03               	movlw	3
+   201      045  0036               	movwf	main@track2
+   202      046                     l591:
+   203      046  0201               	movf	1,w	;volatile
+   204      047  0037               	movwf	main@track2+1
+   205      048                     l593:
+   206                           
+   207                           ;main.c: 55:     {;main.c: 56:         if (toggleSound(&track1, 0, TMR0))
+   208      048  0070               	clrf	toggleSound@pinNumber
+   209      049  0201               	movf	1,w	;volatile
+   210      04A  0031               	movwf	toggleSound@initialTMR0
+   211      04B  0C14               	movlw	(low (main@track1| 0))& (0+255)
+   212      04C  09FD               	fcall	entry__toggleSound
+   213      04D  0210               	movf	?_toggleSound,w
+   214      04E  0033               	movwf	??_main
+   215      04F  0213               	movf	??_main,w
+   216      050  0643               	btfsc	3,2
+   217      051  0A53               	goto	u61
+   218      052  0A54               	goto	u60
+   219      053                     u61:
+   220      053  0A5C               	goto	l597
+   221      054                     u60:
+   222      054                     l595:
+   223                           
+   224                           ;main.c: 57:         {;main.c: 58:            toggleSound(&track2, 1, TMR0-1);
+   225      054  0070               	clrf	toggleSound@pinNumber
+   226      055  02B0               	incf	toggleSound@pinNumber,f
+   227      056  0CFF               	movlw	255
+   228      057  01C1               	addwf	1,w	;volatile
+   229      058  0031               	movwf	toggleSound@initialTMR0
+   230      059  0C16               	movlw	(low (main@track2| 0))& (0+255)
+   231      05A  09FD               	fcall	entry__toggleSound
+   232                           
+   233                           ;main.c: 59:         }
+   234      05B  0A48               	goto	l593
+   235      05C                     l597:
+   236                           
+   237                           ;main.c: 61:         {;main.c: 62:             toggleSound(&track2, 1, TMR0);
+   238      05C  0070               	clrf	toggleSound@pinNumber
+   239      05D  02B0               	incf	toggleSound@pinNumber,f
+   240      05E  0201               	movf	1,w	;volatile
+   241      05F  0031               	movwf	toggleSound@initialTMR0
+   242      060  0C16               	movlw	(low (main@track2| 0))& (0+255)
+   243      061  09FD               	fcall	entry__toggleSound
+   244      062  0A48               	goto	l593
+   245      063  0A00               	ljmp	start
+   246      064                     __end_of_main:
+   247                           
+   248                           	psect	text1
+   249      007                     __ptext1:	
+   250 ;; *************** function _toggleSound *****************
+   251 ;; Defined at:
+   252 ;;		line 38 in file "main.c"
+   253 ;; Parameters:    Size  Location     Type
+   254 ;;  sound           1    wreg     PTR struct Sound
+   255 ;;		 -> main@track2(2), main@track1(2), 
+   256 ;;  pinNumber       1    0[BANK0 ] unsigned char 
+   257 ;;  initialTMR0     1    1[BANK0 ] unsigned char 
+   258 ;; Auto vars:     Size  Location     Type
+   259 ;;  sound           1    2[BANK0 ] PTR struct Sound
+   260 ;;		 -> main@track2(2), main@track1(2), 
+   261 ;; Return value:  Size  Location     Type
+   262 ;;                  1    0[BANK0 ] unsigned char 
+   263 ;; Registers used:
+   264 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+0, btemp+2, btemp+3
+   265 ;; Tracked objects:
+   266 ;;		On entry : 0/0
+   267 ;;		On exit  : 0/0
+   268 ;;		Unchanged: 0/0
+   269 ;; Data sizes:     COMMON   BANK0
+   270 ;;      Params:         0       2
+   271 ;;      Locals:         0       1
+   272 ;;      Temps:          0       0
+   273 ;;      Totals:         0       3
+   274 ;;Total ram usage:        3 bytes
+   275 ;; Hardware stack levels used: 1
+   276 ;; This function calls:
+   277 ;;		Nothing
+   278 ;; This function is called by:
+   279 ;;		_main
+   280 ;; This function uses a non-reentrant model
+   281 ;;
+   282                           
+   283      007                     _toggleSound:	
+   284                           ;psect for function _toggleSound
+   285                           
+   286                           
+   287                           ;toggleSound@sound stored from wreg
+   288      007  0032               	movwf	toggleSound@sound
+   289      008                     l571:
+   290                           
+   291                           ;main.c: 38: unsigned char toggleSound(struct Sound* sound, unsigned char pinNumber, uns
+      +                          igned char initialTMR0);main.c: 39: {;main.c: 40:     if (initialTMR0 == (unsigned char)
+      +                          ((*sound).lastTimeUpdate+((*sound).clocks)))
+   292      008  0211               	movf	toggleSound@initialTMR0,w
+   293      009  003F               	movwf	btemp+3
+   294      00A  0212               	movf	toggleSound@sound,w
+   295      00B  0024               	movwf	4
+   296      00C  0200               	movf	0,w
+   297      00D  003E               	movwf	btemp+2
+   298      00E  0212               	movf	toggleSound@sound,w
+   299      00F  003C               	movwf	btemp
+   300      010  0C01               	movlw	1
+   301      011  01DC               	addwf	btemp,w
+   302      012  0024               	movwf	4
+   303      013  0200               	movf	0,w
+   304      014  01DE               	addwf	btemp+2,w
+   305      015  019F               	xorwf	btemp+3,w
+   306      016  0743               	skipz
+   307      017  0A19               	goto	u41
+   308      018  0A1A               	goto	u40
+   309      019                     u41:
+   310      019  0A36               	goto	l15
+   311      01A                     u40:
+   312      01A                     l573:
+   313                           
+   314                           ;main.c: 41:     {;main.c: 42:         GPIO ^= 1UL << pinNumber;
+   315      01A  0290               	incf	toggleSound@pinNumber,w
+   316      01B  003F               	movwf	btemp+3
+   317      01C  0C01               	movlw	1
+   318      01D  003E               	movwf	btemp+2
+   319      01E  0A21               	goto	u54
+   320      01F                     u55:
+   321      01F  0403               	clrc
+   322      020  037E               	rlf	btemp+2,f
+   323      021                     u54:
+   324      021  02FF               	decfsz	btemp+3,f
+   325      022  0A1F               	goto	u55
+   326      023  021E               	movf	btemp+2,w
+   327      024  003F               	movwf	btemp+3
+   328      025  021F               	movf	btemp+3,w
+   329      026  01A6               	xorwf	6,f	;volatile
+   330      027                     l575:
+   331                           
+   332                           ;main.c: 43:         TMR0 = ++initialTMR0;
+   333      027  0C01               	movlw	1
+   334      028  003F               	movwf	btemp+3
+   335      029  021F               	movf	btemp+3,w
+   336      02A  01F1               	addwf	toggleSound@initialTMR0,f
+   337      02B  0211               	movf	toggleSound@initialTMR0,w
+   338      02C  0021               	movwf	1	;volatile
+   339      02D                     l577:
+   340                           
+   341                           ;main.c: 44:         (*sound).lastTimeUpdate = initialTMR0;
+   342      02D  0211               	movf	toggleSound@initialTMR0,w
+   343      02E  003F               	movwf	btemp+3
+   344      02F  0212               	movf	toggleSound@sound,w
+   345      030  003C               	movwf	btemp
+   346      031  0C01               	movlw	1
+   347      032  01DC               	addwf	btemp,w
+   348      033  0024               	movwf	4
+   349      034  021F               	movf	btemp+3,w
+   350      035  0020               	movwf	0
+   351      036                     l15:
+   352      036  0800               	retlw	0
+   353      037                     __end_of_toggleSound:
+   354                           
+   355                           	psect	jmp_tab
+   356      0FD                     __pjmp_tab:	
+   357                           ;incstack = 0
+   358                           ; Regs used in _toggleSound: [wreg-fsr0h+status,2-btemp+0+btemp+2+btemp+3]
+   359                           
+   360      0FD                     entry__toggleSound:
+   361      0FD  0A07               	ljmp	_toggleSound
+   362      0FE                     entry__initialize:	
+   363                           ;incstack = 0
+   364                           ; Regs used in _initialize: [wreg]
+   365                           
+   366      0FE  0A64               	ljmp	_initialize
+   367                           
+   368                           	psect	text2
+   369      064                     __ptext2:	
+   370 ;; *************** function _initialize *****************
+   371 ;; Defined at:
+   372 ;;		line 26 in file "main.c"
+   373 ;; Parameters:    Size  Location     Type
+   374 ;;		None
+   375 ;; Auto vars:     Size  Location     Type
+   376 ;;		None
+   377 ;; Return value:  Size  Location     Type
+   378 ;;                  1   10[None  ] void 
+   379 ;; Registers used:
+   380 ;;		wreg
+   381 ;; Tracked objects:
+   382 ;;		On entry : 0/0
+   383 ;;		On exit  : 0/0
+   384 ;;		Unchanged: 0/0
+   385 ;; Data sizes:     COMMON   BANK0
+   386 ;;      Params:         0       0
+   387 ;;      Locals:         0       0
+   388 ;;      Temps:          0       0
+   389 ;;      Totals:         0       0
+   390 ;;Total ram usage:        0 bytes
+   391 ;; Hardware stack levels used: 1
+   392 ;; This function calls:
+   393 ;;		Nothing
+   394 ;; This function is called by:
+   395 ;;		_main
+   396 ;; This function uses a non-reentrant model
+   397 ;;
+   398                           
+   399      064                     _initialize:	
+   400                           ;psect for function _initialize
+   401                           
+   402      064                     l569:
+   403                           
+   404                           ;main.c: 28:     TRIS = 0b1000;
+   405      064  0C08               	movlw	8
+   406      065  0006               	tris	6
+   407                           
+   408                           ;main.c: 29:     OPTION = 0b11010110;
+   409      066  0CD6               	movlw	214
+   410      067  0002               	option
+   411      068                     l11:
+   412      068  0800               	retlw	0
+   413      069                     __end_of_initialize:
+   414      01C                     btemp	set	28	;btemp
+   415      01C                     wtemp0	set	28
+   416      01E                     wtemp1	set	30
+   417      01C                     ttemp0	set	28
+   418      01C                     ltemp0	set	28
+   419                           
+   420                           	psect	idloc
+   421                           
+   422                           ;Config register IDLOC0 @ 0x100
+   423                           ;	unspecified, using default values
+   424      100                     	org	256
+   425      100  0FFF               	dw	4095
+   426                           
+   427                           ;Config register IDLOC1 @ 0x101
+   428                           ;	unspecified, using default values
+   429      101                     	org	257
+   430      101  0FFF               	dw	4095
+   431                           
+   432                           ;Config register IDLOC2 @ 0x102
+   433                           ;	unspecified, using default values
+   434      102                     	org	258
+   435      102  0FFF               	dw	4095
+   436                           
+   437                           ;Config register IDLOC3 @ 0x103
+   438                           ;	unspecified, using default values
+   439      103                     	org	259
+   440      103  0FFF               	dw	4095
+   441                           
+   442                           	psect	config
+   443                           
+   444                           ;Config register CONFIG @ 0xFFF
+   445                           ;	Oscillator
+   446                           ;	OSC = 0x1, unprogrammed default
+   447                           ;	Watchdog Timer
+   448                           ;	WDTE = OFF, WDT disabled
+   449                           ;	Code Protect
+   450                           ;	CP = OFF, Code protection off
+   451                           ;	Master Clear Enable
+   452                           ;	MCLRE = ON, GP3/MCLR pin function  is MCLR
+   453      FFF                     	org	4095
+   454      FFF  0FFB               	dw	4091
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         4
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            14      8      12
+
+Pointer List with Targets:
+
+    toggleSound@sound	PTR struct Sound size(1) Largest target is 2
+		 -> main@track2(BANK0[2]), main@track1(BANK0[2]), 
+
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_toggleSound
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 5     5      0     736
+                                              3 BANK0      5     5      0
+                         _initialize
+                        _toggleSound
+ ---------------------------------------------------------------------------------
+ (1) _toggleSound                                          3     1      2     610
+                                              0 BANK0      3     1      2
+ ---------------------------------------------------------------------------------
+ (1) _initialize                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _initialize
+   _toggleSound
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            0      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+STACK                0      0       0       2        0.0%
+BANK0                E      8       C       3       85.7%
+ABS                  0      0       C       4        0.0%
+DATA                 0      0       C       5        0.0%
+BITBANK0             E      0       0       6        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.40 build 20220703182018 
+Symbol Table                                                                                   Fri Dec 30 19:14:19 2022
+
+                     l11 0068                       l15 0036                       u40 001A  
+                     u41 0019                       u60 0054                       u61 0053  
+                     u54 0021                       u55 001F                       fsr 0004  
+                    l571 0008                      l573 001A                      l581 0038  
+                    l575 0027                      l591 0046                      l583 003C  
+                    l569 0064                      l577 002D                      l593 0048  
+                    l585 003E                      l595 0054                      l587 0040  
+                    l579 0037                      l597 005C                      l589 0044  
+                    fsr0 0004                      indf 0000                     _GPIO 0006  
+                   _TMR0 0001                     _TRIS 0006                     _main 0037  
+                   btemp 001C                     start 0000                    ?_main 0010  
+                  ltemp0 001C                    ttemp0 001C                    status 0003  
+                  wtemp0 001C                    wtemp1 001E   toggleSound@initialTMR0 0011  
+        __initialization 0001             __end_of_main 0064                   ??_main 0013  
+                 _OPTION 0000  __end_of__initialization 0005             ?_toggleSound 0010  
+         __pcstackCOMMON 0000     toggleSound@pinNumber 0010               __pbssBANK0 0018  
+             __pmaintext 0037               _initialize 0064                  __ptext1 0007  
+                __ptext2 0064     end_of_initialization 0005               main@track1 0014  
+             main@track2 0016        entry__toggleSound 00FD              ?_initialize 0010  
+    start_initialization 0001                ___latbits 0000            __pcstackBANK0 0010  
+       toggleSound@sound 0012                __pjmp_tab 00FD         entry__initialize 00FE  
+          ??_toggleSound 0000             ??_initialize 0000       __end_of_initialize 0069  
+               main@F155 001A                 main@F157 0018      __end_of_toggleSound 0037  
+            _toggleSound 0007  

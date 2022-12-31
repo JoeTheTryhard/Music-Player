@@ -1,0 +1,74 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC12 PICREGULAR PIC12COM ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 10F200 ]
+[d frameptr 0 ]
+"10 D:\Program Files\MPLABX\xc8\2.40\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"4 D:\Program Files\MPLABX\xc8\2.40\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"25 D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
+[v _initialize initialize `(v  1 e 1 0 ]
+"30
+[v _playB playB `(v  1 e 1 0 ]
+"39
+[v _play2Nothing play2Nothing `(v  1 e 1 0 ]
+"46
+[v _playNothing playNothing `(v  1 e 1 0 ]
+"53
+[v _playF playF `(v  1 e 1 0 ]
+"61
+[v _playA playA `(v  1 e 1 0 ]
+"77
+[v _main main `(v  1 e 1 0 ]
+"270 D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h
+[v _GPIO GPIO `VEuc  1 e 1 @6 ]
+"308
+[v _OPTION OPTION `VEWuc  1 e 1 @0 ]
+"312
+[v _TRIS TRIS `VEWuc  1 e 1 @6 ]
+"77 D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"95
+} 0
+"46
+[v _playNothing playNothing `(v  1 e 1 0 ]
+{
+"48
+[v playNothing@i i `i  1 a 2 1 ]
+"52
+} 0
+"53
+[v _playF playF `(v  1 e 1 0 ]
+{
+"55
+[v playF@i i `i  1 a 2 1 ]
+"60
+} 0
+"30
+[v _playB playB `(v  1 e 1 0 ]
+{
+"32
+[v playB@i i `i  1 a 2 1 ]
+"37
+} 0
+"61
+[v _playA playA `(v  1 e 1 0 ]
+{
+"63
+[v playA@i i `i  1 a 2 1 ]
+"68
+} 0
+"39
+[v _play2Nothing play2Nothing `(v  1 e 1 0 ]
+{
+"41
+[v play2Nothing@i i `i  1 a 2 1 ]
+"45
+} 0
+"25
+[v _initialize initialize `(v  1 e 1 0 ]
+{
+"29
+} 0

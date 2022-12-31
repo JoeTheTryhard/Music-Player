@@ -1,0 +1,128 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"312 D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 312: extern volatile __control unsigned char TRIS __attribute__((address(0x006)));
+[v _TRIS `VWuc ~T0 @X0 0 e@6 ]
+[p mainexit ]
+"32 main.c
+[; ;main.c: 32: {
+[s S18 `i 1 `i 1 `i 1 `i 1 ]
+[n S18 Sound initialClock duration frequency lastTimeUpdate ]
+"73 D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 73: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+"16 main.c
+[p x WDTE  =  OFF        ]
+"17
+[p x CP  =  OFF          ]
+"18
+[p x MCLRE  =  ON        ]
+"55 D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 55: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"75
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 75: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"95
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 95: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"115
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 115: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"181
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 181: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"201
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 201: __asm("OSCCAL equ 05h");
+[; <" OSCCAL equ 05h ;# ">
+"272
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 272: __asm("GPIO equ 06h");
+[; <" GPIO equ 06h ;# ">
+"27 main.c
+[; ;main.c: 27: void initialize(void)
+[v _initialize `(v ~T0 @X0 1 ef ]
+"28
+[; ;main.c: 28: {
+{
+[e :U _initialize ]
+[f ]
+"29
+[; ;main.c: 29:     TRIS = 0b1000;
+[e = _TRIS -> -> 8 `i `uc ]
+"30
+[; ;main.c: 30: }
+[e :UE 17 ]
+}
+"40
+[; ;main.c: 40: float frequencyToPeriod(float frequency)
+[v _frequencyToPeriod `(f ~T0 @X0 1 ef1`f ]
+"41
+[; ;main.c: 41: {
+{
+[e :U _frequencyToPeriod ]
+"40
+[; ;main.c: 40: float frequencyToPeriod(float frequency)
+[v _frequency `f ~T0 @X0 1 r1 ]
+"41
+[; ;main.c: 41: {
+[f ]
+"42
+[; ;main.c: 42:     return (1.0f/frequency)*1000;
+[e ) * / -> .1.0 `f _frequency -> -> 1000 `i `f ]
+[e $UE 19  ]
+"43
+[; ;main.c: 43: }
+[e :UE 19 ]
+}
+"44
+[; ;main.c: 44: int timeToClockCycle(float time)
+[v _timeToClockCycle `(i ~T0 @X0 1 ef1`f ]
+"45
+[; ;main.c: 45: {
+{
+[e :U _timeToClockCycle ]
+"44
+[; ;main.c: 44: int timeToClockCycle(float time)
+[v _time `f ~T0 @X0 1 r1 ]
+"45
+[; ;main.c: 45: {
+[f ]
+"46
+[; ;main.c: 46:     return (int)(4000000*time/1000);
+[e ) -> / * -> -> 4000000 `l `f _time -> -> 1000 `i `f `i ]
+[e $UE 20  ]
+"47
+[; ;main.c: 47: }
+[e :UE 20 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"49
+[; ;main.c: 49: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"50
+[; ;main.c: 50: {
+{
+[e :U _main ]
+[f ]
+"51
+[; ;main.c: 51:     initialize();
+[e ( _initialize ..  ]
+[v F157 `S18 ~T0 @X0 1 s ]
+[i F157
+:U ..
+:U ..
+"52
+[; ;main.c: 52:     struct Sound beep = {TMR0, 500, 16, TMR0};
+-> 0 `i
+-> 0 `i
+-> 0 `i
+-> 0 `i
+..
+..
+]
+[v _beep `S18 ~T0 @X0 1 a ]
+[e = _beep F157 ]
+[e ; = . _beep 0 -> _TMR0 `i ; = . _beep 1 -> 500 `i ; = . _beep 2 -> 16 `i = . _beep 3 -> _TMR0 `i ]
+"62
+[; ;main.c: 62: }
+[e :UE 21 ]
+}
