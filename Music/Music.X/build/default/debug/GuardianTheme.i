@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "GuardianTheme.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 16 "main.c"
+# 1 "GuardianTheme.c" 2
+# 16 "GuardianTheme.c"
 #pragma config WDTE = OFF
 #pragma config CP = OFF
 #pragma config MCLRE = ON
@@ -402,16 +402,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\\pic\\include\\xc.h" 2 3
-# 23 "main.c" 2
+# 23 "GuardianTheme.c" 2
 
-
-
-
-void initialize(void)
-{
-    TRIS = 0b1000;
-    OPTION = 0b11010101;
-}
+# 1 "./MusicPlayer.h" 1
+# 12 "./MusicPlayer.h"
 struct Track
 {
     unsigned char clocks;
@@ -419,22 +413,54 @@ struct Track
 };
 
 
-void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char initialTMR0)
+void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char* initialTMR0)
 {
-    if (initialTMR0 == (unsigned char)((*track).lastTimeUpdate+((*track).clocks)))
+    if (initialTMR0 == (unsigned char)((*track).lastTimeUpdate+((*track).clocks)) && (*track).clocks !=0)
     {
         GPIO ^= 1UL << pinNumber;
         TMR0 = initialTMR0;
         (*track).lastTimeUpdate = initialTMR0;
     }
-
 }
+void playTracks(struct Track* track1, struct Track* track2)
+{
+    unsigned char initialTMR0 = TMR0;
+    for (unsigned char counter = 0; counter < 255; counter++)
+    {
+        if (initialTMR0 == (unsigned char)((*track1).lastTimeUpdate+((*track1).clocks)) && (*track1).clocks !=0)
+        {
+            GPIO ^= 1UL << 0;
+            TMR0 = initialTMR0;
+            (*track1).lastTimeUpdate = initialTMR0;
+        }
+        if (initialTMR0 == (unsigned char)((*track2).lastTimeUpdate+((*track2).clocks)) && (*track2).clocks !=0)
+        {
+            GPIO ^= 1UL << 1;
+            TMR0 = initialTMR0;
+            (*track2).lastTimeUpdate = initialTMR0;
+        }
+    }
+}
+# 24 "GuardianTheme.c" 2
+
+
+
 
 
 void main(void)
 {
-    initialize();
+    unsigned char counter;
+    TRIS = 0b1000;
+    OPTION = 0b11010100;
     struct Track track1 = {10, TMR0};
     struct Track track2 = {20, TMR0};
-
+    while(1)
+    {
+        playTracks(&track1, &track2);
+        playTracks(&track1, &track2);
+        playTracks(&track1, &track2);
+        playTracks(&track1, &track2);
+        playTracks(&track1, &track2);
+        playTracks(&track1, &track2);
+    }
 }

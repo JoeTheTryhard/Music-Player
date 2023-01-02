@@ -1,0 +1,287 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"312 D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 312: extern volatile __control unsigned char TRIS __attribute__((address(0x006)));
+[v _TRIS `VWuc ~T0 @X0 0 e@6 ]
+"308
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 308: extern volatile __control unsigned char OPTION __attribute__((address(0x000)));
+[v _OPTION `VWuc ~T0 @X0 0 e@0 ]
+"18 ./MusicPlayer.h
+[; ;./MusicPlayer.h: 18: {
+[s S18 `uc 1 `uc 1 ]
+[n S18 Track clocks lastTimeUpdate ]
+"270 D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 270: extern volatile unsigned char GPIO __attribute__((address(0x006)));
+[v _GPIO `Vuc ~T0 @X0 0 e@6 ]
+"73
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 73: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+[p mainexit ]
+"16 GuardianTheme.c
+[p x WDTE  =  OFF        ]
+"17
+[p x CP  =  OFF          ]
+"18
+[p x MCLRE  =  ON        ]
+"55 D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 55: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"75
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 75: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"95
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 95: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"115
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 115: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"181
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 181: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"201
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 201: __asm("OSCCAL equ 05h");
+[; <" OSCCAL equ 05h ;# ">
+"272
+[; ;D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\pic\include\proc\pic10f200.h: 272: __asm("GPIO equ 06h");
+[; <" GPIO equ 06h ;# ">
+"11 ./MusicPlayer.h
+[; ;./MusicPlayer.h: 11: void initialize()
+[v _initialize `(v ~T0 @X0 1 ef ]
+"12
+[; ;./MusicPlayer.h: 12: {
+{
+[e :U _initialize ]
+[f ]
+"13
+[; ;./MusicPlayer.h: 13:     TRIS = 0b1000;
+[e = _TRIS -> -> 8 `i `uc ]
+"14
+[; ;./MusicPlayer.h: 14:     OPTION = 0b11010100;
+[e = _OPTION -> -> 212 `i `uc ]
+"15
+[; ;./MusicPlayer.h: 15: }
+[e :UE 17 ]
+}
+"24
+[; ;./MusicPlayer.h: 24: void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char initialTMR0)
+[v _toggleSound `(v ~T0 @X0 1 ef3`*S18`uc`uc ]
+"25
+[; ;./MusicPlayer.h: 25: {
+{
+[e :U _toggleSound ]
+"24
+[; ;./MusicPlayer.h: 24: void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char initialTMR0)
+[v _track `*S18 ~T0 @X0 1 r1 ]
+[v _pinNumber `uc ~T0 @X0 1 r2 ]
+[v _initialTMR0 `uc ~T0 @X0 1 r3 ]
+"25
+[; ;./MusicPlayer.h: 25: {
+[f ]
+"26
+[; ;./MusicPlayer.h: 26:     if (initialTMR0 == (unsigned char)((*track).lastTimeUpdate+((*track).clocks)) && (*track).clocks !=0)
+[e $ ! && == -> _initialTMR0 `i -> -> + -> . *U _track 1 `i -> . *U _track 0 `i `uc `i != -> . *U _track 0 `i -> 0 `i 20  ]
+"27
+[; ;./MusicPlayer.h: 27:     {
+{
+"28
+[; ;./MusicPlayer.h: 28:         GPIO ^= 1UL << pinNumber;
+[e =^ _GPIO -> << -> 1 `ul -> _pinNumber `i `Vuc ]
+"29
+[; ;./MusicPlayer.h: 29:         TMR0 = initialTMR0;
+[e = _TMR0 _initialTMR0 ]
+"30
+[; ;./MusicPlayer.h: 30:         (*track).lastTimeUpdate = initialTMR0;
+[e = . *U _track 1 _initialTMR0 ]
+"31
+[; ;./MusicPlayer.h: 31:     }
+}
+[e :U 20 ]
+"32
+[; ;./MusicPlayer.h: 32: }
+[e :UE 19 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"29 GuardianTheme.c
+[; ;GuardianTheme.c: 29: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"30
+[; ;GuardianTheme.c: 30: {
+{
+[e :U _main ]
+[f ]
+"31
+[; ;GuardianTheme.c: 31:     initialize();
+[e ( _initialize ..  ]
+[v F155 `S18 ~T0 @X0 1 s ]
+[i F155
+:U ..
+:U ..
+"32
+[; ;GuardianTheme.c: 32:     struct Track track1 = {0, TMR0};
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _track1 `S18 ~T0 @X0 1 a ]
+[e = _track1 F155 ]
+[e ; = . _track1 0 -> -> 0 `i `uc = . _track1 1 _TMR0 ]
+[v F157 `S18 ~T0 @X0 1 s ]
+[i F157
+:U ..
+:U ..
+"33
+[; ;GuardianTheme.c: 33:     struct Track track2 = {0, TMR0};
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _track2 `S18 ~T0 @X0 1 a ]
+[e = _track2 F157 ]
+[e ; = . _track2 0 -> -> 0 `i `uc = . _track2 1 _TMR0 ]
+"34
+[; ;GuardianTheme.c: 34:     unsigned char counter;
+[v _counter `uc ~T0 @X0 1 a ]
+"35
+[; ;GuardianTheme.c: 35:     while(1)
+[e :U 23 ]
+"36
+[; ;GuardianTheme.c: 36:     {
+{
+"37
+[; ;GuardianTheme.c: 37:         for (counter = 0; counter < 254; counter++)
+{
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `i -> 254 `i 25  ]
+[e $U 26  ]
+[e :U 25 ]
+"38
+[; ;GuardianTheme.c: 38:         {
+{
+"39
+[; ;GuardianTheme.c: 39:             toggleSound(&track1, 0, TMR0);
+[e ( _toggleSound (3 , , &U _track1 -> -> 0 `i `uc _TMR0 ]
+"40
+[; ;GuardianTheme.c: 40:             toggleSound(&track1, 1, TMR0);
+[e ( _toggleSound (3 , , &U _track1 -> -> 1 `i `uc _TMR0 ]
+"41
+[; ;GuardianTheme.c: 41:         }
+}
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `i -> 254 `i 25  ]
+[e :U 26 ]
+}
+"43
+[; ;GuardianTheme.c: 43:         track1.clocks = 20;
+[e = . _track1 0 -> -> 20 `i `uc ]
+"44
+[; ;GuardianTheme.c: 44:         track2.clocks = 30;
+[e = . _track2 0 -> -> 30 `i `uc ]
+"46
+[; ;GuardianTheme.c: 46:         for (counter = 0; counter < 254; counter++)
+{
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `i -> 254 `i 28  ]
+[e $U 29  ]
+[e :U 28 ]
+"47
+[; ;GuardianTheme.c: 47:         {
+{
+"48
+[; ;GuardianTheme.c: 48:             toggleSound(&track1, 0, TMR0);
+[e ( _toggleSound (3 , , &U _track1 -> -> 0 `i `uc _TMR0 ]
+"49
+[; ;GuardianTheme.c: 49:             toggleSound(&track1, 1, TMR0);
+[e ( _toggleSound (3 , , &U _track1 -> -> 1 `i `uc _TMR0 ]
+"50
+[; ;GuardianTheme.c: 50:         }
+}
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `i -> 254 `i 28  ]
+[e :U 29 ]
+}
+"51
+[; ;GuardianTheme.c: 51:         for (counter = 0; counter < 254; counter++)
+{
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `i -> 254 `i 31  ]
+[e $U 32  ]
+[e :U 31 ]
+"52
+[; ;GuardianTheme.c: 52:         {
+{
+"53
+[; ;GuardianTheme.c: 53:             toggleSound(&track1, 0, TMR0);
+[e ( _toggleSound (3 , , &U _track1 -> -> 0 `i `uc _TMR0 ]
+"54
+[; ;GuardianTheme.c: 54:             toggleSound(&track1, 1, TMR0);
+[e ( _toggleSound (3 , , &U _track1 -> -> 1 `i `uc _TMR0 ]
+"55
+[; ;GuardianTheme.c: 55:         }
+}
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `i -> 254 `i 31  ]
+[e :U 32 ]
+}
+"56
+[; ;GuardianTheme.c: 56:         for (counter = 0; counter < 254; counter++)
+{
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `i -> 254 `i 34  ]
+[e $U 35  ]
+[e :U 34 ]
+"57
+[; ;GuardianTheme.c: 57:         {
+{
+"58
+[; ;GuardianTheme.c: 58:             toggleSound(&track1, 0, TMR0);
+[e ( _toggleSound (3 , , &U _track1 -> -> 0 `i `uc _TMR0 ]
+"59
+[; ;GuardianTheme.c: 59:             toggleSound(&track1, 1, TMR0);
+[e ( _toggleSound (3 , , &U _track1 -> -> 1 `i `uc _TMR0 ]
+"60
+[; ;GuardianTheme.c: 60:         }
+}
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `i -> 254 `i 34  ]
+[e :U 35 ]
+}
+"61
+[; ;GuardianTheme.c: 61:         for (counter = 0; counter < 254; counter++)
+{
+[e = _counter -> -> 0 `i `uc ]
+[e $ < -> _counter `i -> 254 `i 37  ]
+[e $U 38  ]
+[e :U 37 ]
+"62
+[; ;GuardianTheme.c: 62:         {
+{
+"63
+[; ;GuardianTheme.c: 63:             toggleSound(&track1, 0, TMR0);
+[e ( _toggleSound (3 , , &U _track1 -> -> 0 `i `uc _TMR0 ]
+"64
+[; ;GuardianTheme.c: 64:             toggleSound(&track1, 1, TMR0);
+[e ( _toggleSound (3 , , &U _track1 -> -> 1 `i `uc _TMR0 ]
+"65
+[; ;GuardianTheme.c: 65:         }
+}
+[e ++ _counter -> -> 1 `i `uc ]
+[e $ < -> _counter `i -> 254 `i 37  ]
+[e :U 38 ]
+}
+"68
+[; ;GuardianTheme.c: 68:         track1.clocks = 0;
+[e = . _track1 0 -> -> 0 `i `uc ]
+"69
+[; ;GuardianTheme.c: 69:         track2.clocks = 0;
+[e = . _track2 0 -> -> 0 `i `uc ]
+"71
+[; ;GuardianTheme.c: 71:     }
+}
+[e :U 22 ]
+[e $U 23  ]
+[e :U 24 ]
+"72
+[; ;GuardianTheme.c: 72: }
+[e :UE 21 ]
+}

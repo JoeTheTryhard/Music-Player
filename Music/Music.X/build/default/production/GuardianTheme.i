@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "GuardianTheme.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 16 "main.c"
+# 1 "GuardianTheme.c" 2
+# 16 "GuardianTheme.c"
 #pragma config WDTE = OFF
 #pragma config CP = OFF
 #pragma config MCLRE = ON
@@ -402,16 +402,16 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/Program Files/MPLABX/packs/Microchip/PIC10-12Fxxx_DFP/1.5.61/xc8\\pic\\include\\xc.h" 2 3
-# 23 "main.c" 2
+# 23 "GuardianTheme.c" 2
 
-
-
-
-void initialize(void)
+# 1 "./MusicPlayer.h" 1
+# 11 "./MusicPlayer.h"
+void initialize()
 {
     TRIS = 0b1000;
-    OPTION = 0b11010101;
+    OPTION = 0b11010100;
 }
+
 struct Track
 {
     unsigned char clocks;
@@ -421,20 +421,60 @@ struct Track
 
 void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char initialTMR0)
 {
-    if (initialTMR0 == (unsigned char)((*track).lastTimeUpdate+((*track).clocks)))
+    if (initialTMR0 == (unsigned char)((*track).lastTimeUpdate+((*track).clocks)) && (*track).clocks !=0)
     {
         GPIO ^= 1UL << pinNumber;
         TMR0 = initialTMR0;
         (*track).lastTimeUpdate = initialTMR0;
     }
-
 }
+# 24 "GuardianTheme.c" 2
+
+
+
 
 
 void main(void)
 {
     initialize();
-    struct Track track1 = {10, TMR0};
-    struct Track track2 = {20, TMR0};
+    struct Track track1 = {0, TMR0};
+    struct Track track2 = {0, TMR0};
+    unsigned char counter;
+    while(1)
+    {
+        for (counter = 0; counter < 254; counter++)
+        {
+            toggleSound(&track1, 0, TMR0);
+            toggleSound(&track1, 1, TMR0);
+        }
 
+        track1.clocks = 20;
+        track2.clocks = 30;
+
+        for (counter = 0; counter < 254; counter++)
+        {
+            toggleSound(&track1, 0, TMR0);
+            toggleSound(&track1, 1, TMR0);
+        }
+        for (counter = 0; counter < 254; counter++)
+        {
+            toggleSound(&track1, 0, TMR0);
+            toggleSound(&track1, 1, TMR0);
+        }
+        for (counter = 0; counter < 254; counter++)
+        {
+            toggleSound(&track1, 0, TMR0);
+            toggleSound(&track1, 1, TMR0);
+        }
+        for (counter = 0; counter < 254; counter++)
+        {
+            toggleSound(&track1, 0, TMR0);
+            toggleSound(&track1, 1, TMR0);
+        }
+
+
+        track1.clocks = 0;
+        track2.clocks = 0;
+
+    }
 }

@@ -8,12 +8,12 @@
 
 ### Memory Usage ###
  Intel Hex-file ranges:
-  0h - D1h		(dist/default/debug\Music.X.debug.hex)
-  1FAh - 1FDh		(dist/default/debug\Music.X.debug.hex)
+  0h - 125h		(dist/default/debug\Music.X.debug.hex)
+  1FCh - 1FDh		(dist/default/debug\Music.X.debug.hex)
   200h - 207h		(dist/default/debug\Music.X.debug.hex)
   1FFEh - 1FFFh		(dist/default/debug\Music.X.debug.hex)
  Unused ranges:
-  D2h - 1F9h
+  126h - 1FBh
   1FEh - 1FFh
   208h - 1FFDh
 
@@ -37,9 +37,14 @@
 000000A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000000B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000000C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000000D0 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
+000000D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000000E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000000F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000100 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000110 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000120 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
-000001F0 | -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1 -- --
+000001F0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 -- --
 00000200 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00001FF0 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1

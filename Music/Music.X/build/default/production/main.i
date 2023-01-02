@@ -406,6 +406,7 @@ extern __bank0 __bit __timeout;
 
 
 
+
 void initialize(void)
 {
     TRIS = 0b1000;
@@ -432,8 +433,8 @@ void toggleSound(struct Sound* sound, unsigned char pinNumber, unsigned char ini
 void main(void)
 {
     initialize();
-    struct Sound track1 = {50, TMR0};
-    struct Sound track2 = {100, TMR0};
+    struct Sound track1 = {10, TMR0};
+    struct Sound track2 = {20, TMR0};
     while(1)
     {
         toggleSound(&track1, 0, TMR0);
