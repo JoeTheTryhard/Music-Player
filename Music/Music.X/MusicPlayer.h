@@ -11,7 +11,8 @@
 void initialize()
 {
     TRIS = 0b1000;
-    OPTION = 0b11010100; //Set the correct prescaler for the option register, bit 3
+    OPTION = 0b11010100;
+    //Set the correct prescaler for the option register, bit 3
 }
 
 struct Track

@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
-                                                                                               Thu Jan 05 16:25:45 2023
+                                                                                               Thu Jan 05 16:42:08 2023
 
 Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1 
      1                           	processor	10F200
@@ -120,367 +120,416 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og1
    106                           
    107                           ; 1 bytes @ 0x2
    108      012                     	ds	1
-   109      013                     main@track1:
+   109      013                     main@counter:
    110                           
    111                           ; 2 bytes @ 0x3
    112      013                     	ds	2
-   113      015                     main@counter:
+   113      015                     main@track1:
    114                           
    115                           ; 2 bytes @ 0x5
    116      015                     	ds	2
-   117                           
-   118                           	psect	maintext
-   119      003                     __pmaintext:	
-   120 ;;
-   121 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   122 ;;
-   123 ;; *************** function _main *****************
-   124 ;; Defined at:
-   125 ;;		line 29 in file "GuardianTheme.c"
-   126 ;; Parameters:    Size  Location     Type
-   127 ;;		None
-   128 ;; Auto vars:     Size  Location     Type
-   129 ;;  counter         2    5[BANK0 ] unsigned short 
-   130 ;;  track1          2    3[BANK0 ] struct Track
-   131 ;;  track2          2    0        struct Track
-   132 ;; Return value:  Size  Location     Type
-   133 ;;                  1   19[None  ] void 
-   134 ;; Registers used:
-   135 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+0, btemp+1, btemp+2, btemp+3, pclath, cstack
-   136 ;; Tracked objects:
-   137 ;;		On entry : B00/0
-   138 ;;		On exit  : 0/0
-   139 ;;		Unchanged: 0/0
-   140 ;; Data sizes:     COMMON   BANK0
-   141 ;;      Params:         0       0
-   142 ;;      Locals:         0       4
-   143 ;;      Temps:          0       0
-   144 ;;      Totals:         0       4
-   145 ;;Total ram usage:        4 bytes
-   146 ;; Hardware stack levels required when called: 1
-   147 ;; This function calls:
-   148 ;;		_initialize
-   149 ;;		_toggleSound
-   150 ;; This function is called by:
-   151 ;;		Startup code after reset
-   152 ;; This function uses a non-reentrant model
-   153 ;;
-   154                           
-   155      003                     _main:	
-   156                           ;psect for function _main
-   157                           
-   158      003                     l591:	
-   159                           ;incstack = 0
-   160                           ; Regs used in _main: [wreg-fsr0h+status,2-btemp+3+pclath+cstack]
+   117      017                     main@track2:
+   118                           
+   119                           ; 2 bytes @ 0x7
+   120      017                     	ds	2
+   121                           
+   122                           	psect	maintext
+   123      003                     __pmaintext:	
+   124 ;;
+   125 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   126 ;;
+   127 ;; *************** function _main *****************
+   128 ;; Defined at:
+   129 ;;		line 29 in file "GuardianTheme.c"
+   130 ;; Parameters:    Size  Location     Type
+   131 ;;		None
+   132 ;; Auto vars:     Size  Location     Type
+   133 ;;  track2          2    7[BANK0 ] struct Track
+   134 ;;  track1          2    5[BANK0 ] struct Track
+   135 ;;  counter         2    3[BANK0 ] unsigned short 
+   136 ;; Return value:  Size  Location     Type
+   137 ;;                  1   19[None  ] void 
+   138 ;; Registers used:
+   139 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+0, btemp+1, btemp+2, btemp+3, pclath, cstack
+   140 ;; Tracked objects:
+   141 ;;		On entry : B00/0
+   142 ;;		On exit  : 0/0
+   143 ;;		Unchanged: 0/0
+   144 ;; Data sizes:     COMMON   BANK0
+   145 ;;      Params:         0       0
+   146 ;;      Locals:         0       6
+   147 ;;      Temps:          0       0
+   148 ;;      Totals:         0       6
+   149 ;;Total ram usage:        6 bytes
+   150 ;; Hardware stack levels required when called: 1
+   151 ;; This function calls:
+   152 ;;		_initialize
+   153 ;;		_toggleSound
+   154 ;; This function is called by:
+   155 ;;		Startup code after reset
+   156 ;; This function uses a non-reentrant model
+   157 ;;
+   158                           
+   159      003                     _main:	
+   160                           ;psect for function _main
    161                           
-   162                           
-   163                           ;GuardianTheme.c: 31:     initialize();
-   164      003  09FE               	fcall	entry__initialize
-   165      004                     l593:
+   162      003                     l601:	
+   163                           ;incstack = 0
+   164                           ; Regs used in _main: [wreg-fsr0h+status,2-btemp+3+pclath+cstack]
+   165                           
    166                           
-   167                           ;GuardianTheme.c: 36:     {;GuardianTheme.c: 37:         track1.clocks = 30;
-   168      004  0C1E               	movlw	30
-   169      005  0033               	movwf	main@track1
-   170      006                     l595:
-   171                           
-   172                           ;GuardianTheme.c: 38:         for (counter = 0; counter<6000; counter++)
-   173      006  0075               	clrf	main@counter
-   174      007  0076               	clrf	main@counter+1
-   175      008                     l601:
-   176                           
-   177                           ;GuardianTheme.c: 39:         {;GuardianTheme.c: 40:             toggleSound(&track1, 0,
-      +                           TMR0);
-   178      008  0070               	clrf	toggleSound@pinNumber
-   179      009  0201               	movf	1,w	;volatile
-   180      00A  0031               	movwf	toggleSound@initialTMR0
-   181      00B  0C13               	movlw	(low (main@track1| 0))& (0+255)
-   182      00C  09FD               	fcall	entry__toggleSound
-   183      00D                     l603:
+   167                           ;GuardianTheme.c: 31:     initialize();
+   168      003  09FE               	fcall	entry__initialize
+   169      004                     l603:
+   170                           
+   171                           ;GuardianTheme.c: 32:     struct Track track1;;GuardianTheme.c: 33:     struct Track tra
+      +                          ck2;;GuardianTheme.c: 34:     unsigned short counter;;GuardianTheme.c: 35:     track1.cl
+      +                          ocks = 30;
+   172      004  0C1E               	movlw	30
+   173      005  0035               	movwf	main@track1
+   174      006                     l605:
+   175                           
+   176                           ;GuardianTheme.c: 36:     track2.clocks = 30;
+   177      006  0C1E               	movlw	30
+   178      007  0037               	movwf	main@track2
+   179      008                     l607:
+   180                           
+   181                           ;GuardianTheme.c: 37:     track1.lastTimeUpdate = 0;
+   182      008  0076               	clrf	main@track1+1
+   183      009                     l609:
    184                           
-   185                           ;GuardianTheme.c: 41:         }
-   186      00D  0C01               	movlw	1
-   187      00E  003C               	movwf	btemp
-   188      00F  007D               	clrf	btemp+1
-   189      010  021C               	movf	wtemp0,w
-   190      011  01F5               	addwf	main@counter,f
-   191      012  0603               	skipnc
-   192      013  02B6               	incf	main@counter+1,f
-   193      014  021D               	movf	wtemp0+1,w
-   194      015  01F6               	addwf	main@counter+1,f
-   195      016                     l605:
-   196      016  0C17               	movlw	23
-   197      017  0096               	subwf	main@counter+1,w
-   198      018  0C70               	movlw	112
-   199      019  0643               	skipnz
-   200      01A  0095               	subwf	main@counter,w
-   201      01B  0703               	skipc
-   202      01C  0A1E               	goto	u91
-   203      01D  0A1F               	goto	u90
-   204      01E                     u91:
-   205      01E  0A08               	goto	l601
-   206      01F                     u90:
-   207      01F                     l607:
-   208                           
-   209                           ;GuardianTheme.c: 43:         track1.clocks = 20;
-   210      01F  0C14               	movlw	20
-   211      020  0033               	movwf	main@track1
-   212      021                     l609:
-   213                           
-   214                           ;GuardianTheme.c: 44:         for (counter = 0; counter<6000; counter++)
-   215      021  0075               	clrf	main@counter
-   216      022  0076               	clrf	main@counter+1
-   217      023                     l615:
-   218                           
-   219                           ;GuardianTheme.c: 45:         {;GuardianTheme.c: 46:             toggleSound(&track1, 0,
+   185                           ;GuardianTheme.c: 38:     track2.lastTimeUpdate = 0;
+   186      009  0078               	clrf	main@track2+1
+   187      00A                     l611:
+   188                           
+   189                           ;GuardianTheme.c: 40:     {;GuardianTheme.c: 41:         track1.clocks = 30;
+   190      00A  0C1E               	movlw	30
+   191      00B  0035               	movwf	main@track1
+   192      00C                     l613:
+   193                           
+   194                           ;GuardianTheme.c: 42:         track2.clocks = 30;
+   195      00C  0C1E               	movlw	30
+   196      00D  0037               	movwf	main@track2
+   197      00E                     l615:
+   198                           
+   199                           ;GuardianTheme.c: 43:         for (counter = 0; counter<6000; counter++)
+   200      00E  0073               	clrf	main@counter
+   201      00F  0074               	clrf	main@counter+1
+   202      010                     l621:
+   203                           
+   204                           ;GuardianTheme.c: 44:         {;GuardianTheme.c: 45:             toggleSound(&track1, 0,
       +                           TMR0);
-   220      023  0070               	clrf	toggleSound@pinNumber
-   221      024  0201               	movf	1,w	;volatile
-   222      025  0031               	movwf	toggleSound@initialTMR0
-   223      026  0C13               	movlw	(low (main@track1| 0))& (0+255)
-   224      027  09FD               	fcall	entry__toggleSound
-   225      028                     l617:
-   226                           
-   227                           ;GuardianTheme.c: 47:         }
-   228      028  0C01               	movlw	1
-   229      029  003C               	movwf	btemp
-   230      02A  007D               	clrf	btemp+1
-   231      02B  021C               	movf	wtemp0,w
-   232      02C  01F5               	addwf	main@counter,f
-   233      02D  0603               	skipnc
-   234      02E  02B6               	incf	main@counter+1,f
-   235      02F  021D               	movf	wtemp0+1,w
-   236      030  01F6               	addwf	main@counter+1,f
-   237      031                     l619:
-   238      031  0C17               	movlw	23
-   239      032  0096               	subwf	main@counter+1,w
-   240      033  0C70               	movlw	112
-   241      034  0643               	skipnz
-   242      035  0095               	subwf	main@counter,w
-   243      036  0703               	skipc
-   244      037  0A39               	goto	u101
-   245      038  0A3A               	goto	u100
-   246      039                     u101:
-   247      039  0A23               	goto	l615
-   248      03A                     u100:
-   249      03A  0A04               	goto	l593
-   250      03B  0A00               	ljmp	start
-   251      03C                     __end_of_main:
+   205      010  0070               	clrf	toggleSound@pinNumber
+   206      011  0201               	movf	1,w	;volatile
+   207      012  0031               	movwf	toggleSound@initialTMR0
+   208      013  0C15               	movlw	(low (main@track1| 0))& (0+255)
+   209      014  09FD               	fcall	entry__toggleSound
+   210                           
+   211                           ;GuardianTheme.c: 46:             toggleSound(&track2, 1, TMR0);
+   212      015  0070               	clrf	toggleSound@pinNumber
+   213      016  02B0               	incf	toggleSound@pinNumber,f
+   214      017  0201               	movf	1,w	;volatile
+   215      018  0031               	movwf	toggleSound@initialTMR0
+   216      019  0C17               	movlw	(low (main@track2| 0))& (0+255)
+   217      01A  09FD               	fcall	entry__toggleSound
+   218      01B                     l623:
+   219                           
+   220                           ;GuardianTheme.c: 47:         }
+   221      01B  0C01               	movlw	1
+   222      01C  003C               	movwf	btemp
+   223      01D  007D               	clrf	btemp+1
+   224      01E  021C               	movf	wtemp0,w
+   225      01F  01F3               	addwf	main@counter,f
+   226      020  0603               	skipnc
+   227      021  02B4               	incf	main@counter+1,f
+   228      022  021D               	movf	wtemp0+1,w
+   229      023  01F4               	addwf	main@counter+1,f
+   230      024                     l625:
+   231      024  0C17               	movlw	23
+   232      025  0094               	subwf	main@counter+1,w
+   233      026  0C70               	movlw	112
+   234      027  0643               	skipnz
+   235      028  0093               	subwf	main@counter,w
+   236      029  0703               	skipc
+   237      02A  0A2C               	goto	u91
+   238      02B  0A2D               	goto	u90
+   239      02C                     u91:
+   240      02C  0A10               	goto	l621
+   241      02D                     u90:
+   242      02D                     l627:
+   243                           
+   244                           ;GuardianTheme.c: 49:         track1.clocks = 20;
+   245      02D  0C14               	movlw	20
+   246      02E  0035               	movwf	main@track1
+   247                           
+   248                           ;GuardianTheme.c: 50:         track2.clocks = 20;
+   249      02F  0C14               	movlw	20
+   250      030  0037               	movwf	main@track2
+   251      031                     l629:
    252                           
-   253                           	psect	text1
-   254      03C                     __ptext1:	
-   255 ;; *************** function _toggleSound *****************
-   256 ;; Defined at:
-   257 ;;		line 24 in file "./MusicPlayer.h"
-   258 ;; Parameters:    Size  Location     Type
-   259 ;;  track           1    wreg     PTR struct Track
-   260 ;;		 -> main@track1(2), 
-   261 ;;  pinNumber       1    0[BANK0 ] unsigned char 
-   262 ;;  initialTMR0     1    1[BANK0 ] unsigned char 
-   263 ;; Auto vars:     Size  Location     Type
-   264 ;;  track           1    2[BANK0 ] PTR struct Track
-   265 ;;		 -> main@track1(2), 
-   266 ;; Return value:  Size  Location     Type
-   267 ;;                  1    0[BANK0 ] void 
-   268 ;; Registers used:
-   269 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+0, btemp+2, btemp+3
-   270 ;; Tracked objects:
-   271 ;;		On entry : 0/0
-   272 ;;		On exit  : 0/0
-   273 ;;		Unchanged: 0/0
-   274 ;; Data sizes:     COMMON   BANK0
-   275 ;;      Params:         0       2
-   276 ;;      Locals:         0       1
-   277 ;;      Temps:          0       0
-   278 ;;      Totals:         0       3
-   279 ;;Total ram usage:        3 bytes
-   280 ;; Hardware stack levels used: 1
-   281 ;; This function calls:
-   282 ;;		Nothing
-   283 ;; This function is called by:
-   284 ;;		_main
-   285 ;; This function uses a non-reentrant model
-   286 ;;
-   287                           
-   288      03C                     _toggleSound:	
-   289                           ;psect for function _toggleSound
-   290                           
-   291                           
-   292                           ;toggleSound@track stored from wreg
-   293      03C  0032               	movwf	toggleSound@track
-   294      03D                     l581:
-   295                           
-   296                           ;./MusicPlayer.h: 24: void toggleSound(struct Track* track, unsigned char pinNumber, uns
+   253                           ;GuardianTheme.c: 51:         for (counter = 0; counter<6000; counter++)
+   254      031  0073               	clrf	main@counter
+   255      032  0074               	clrf	main@counter+1
+   256      033                     l635:
+   257                           
+   258                           ;GuardianTheme.c: 52:         {;GuardianTheme.c: 53:             toggleSound(&track1, 0,
+      +                           TMR0);
+   259      033  0070               	clrf	toggleSound@pinNumber
+   260      034  0201               	movf	1,w	;volatile
+   261      035  0031               	movwf	toggleSound@initialTMR0
+   262      036  0C15               	movlw	(low (main@track1| 0))& (0+255)
+   263      037  09FD               	fcall	entry__toggleSound
+   264                           
+   265                           ;GuardianTheme.c: 54:             toggleSound(&track2, 1, TMR0);
+   266      038  0070               	clrf	toggleSound@pinNumber
+   267      039  02B0               	incf	toggleSound@pinNumber,f
+   268      03A  0201               	movf	1,w	;volatile
+   269      03B  0031               	movwf	toggleSound@initialTMR0
+   270      03C  0C17               	movlw	(low (main@track2| 0))& (0+255)
+   271      03D  09FD               	fcall	entry__toggleSound
+   272      03E                     l637:
+   273                           
+   274                           ;GuardianTheme.c: 55:         }
+   275      03E  0C01               	movlw	1
+   276      03F  003C               	movwf	btemp
+   277      040  007D               	clrf	btemp+1
+   278      041  021C               	movf	wtemp0,w
+   279      042  01F3               	addwf	main@counter,f
+   280      043  0603               	skipnc
+   281      044  02B4               	incf	main@counter+1,f
+   282      045  021D               	movf	wtemp0+1,w
+   283      046  01F4               	addwf	main@counter+1,f
+   284      047                     l639:
+   285      047  0C17               	movlw	23
+   286      048  0094               	subwf	main@counter+1,w
+   287      049  0C70               	movlw	112
+   288      04A  0643               	skipnz
+   289      04B  0093               	subwf	main@counter,w
+   290      04C  0703               	skipc
+   291      04D  0A4F               	goto	u101
+   292      04E  0A50               	goto	u100
+   293      04F                     u101:
+   294      04F  0A33               	goto	l635
+   295      050                     u100:
+   296      050  0A0A               	goto	l611
+   297      051  0A00               	ljmp	start
+   298      052                     __end_of_main:
+   299                           
+   300                           	psect	text1
+   301      052                     __ptext1:	
+   302 ;; *************** function _toggleSound *****************
+   303 ;; Defined at:
+   304 ;;		line 24 in file "./MusicPlayer.h"
+   305 ;; Parameters:    Size  Location     Type
+   306 ;;  track           1    wreg     PTR struct Track
+   307 ;;		 -> main@track2(2), main@track1(2), 
+   308 ;;  pinNumber       1    0[BANK0 ] unsigned char 
+   309 ;;  initialTMR0     1    1[BANK0 ] unsigned char 
+   310 ;; Auto vars:     Size  Location     Type
+   311 ;;  track           1    2[BANK0 ] PTR struct Track
+   312 ;;		 -> main@track2(2), main@track1(2), 
+   313 ;; Return value:  Size  Location     Type
+   314 ;;                  1    0[BANK0 ] void 
+   315 ;; Registers used:
+   316 ;;		wreg, fsr0l, fsr0h, status,2, status,0, btemp+0, btemp+2, btemp+3
+   317 ;; Tracked objects:
+   318 ;;		On entry : 0/0
+   319 ;;		On exit  : 0/0
+   320 ;;		Unchanged: 0/0
+   321 ;; Data sizes:     COMMON   BANK0
+   322 ;;      Params:         0       2
+   323 ;;      Locals:         0       1
+   324 ;;      Temps:          0       0
+   325 ;;      Totals:         0       3
+   326 ;;Total ram usage:        3 bytes
+   327 ;; Hardware stack levels used: 1
+   328 ;; This function calls:
+   329 ;;		Nothing
+   330 ;; This function is called by:
+   331 ;;		_main
+   332 ;; This function uses a non-reentrant model
+   333 ;;
+   334                           
+   335      052                     _toggleSound:	
+   336                           ;psect for function _toggleSound
+   337                           
+   338                           
+   339                           ;toggleSound@track stored from wreg
+   340      052  0032               	movwf	toggleSound@track
+   341      053                     l591:
+   342                           
+   343                           ;./MusicPlayer.h: 24: void toggleSound(struct Track* track, unsigned char pinNumber, uns
       +                          igned char initialTMR0);./MusicPlayer.h: 25: {;./MusicPlayer.h: 26:     if (initialTMR0 
       +                          == (unsigned char)((*track).lastTimeUpdate+((*track).clocks)) && (*track).clocks !=0)
-   297      03D  0211               	movf	toggleSound@initialTMR0,w
-   298      03E  003F               	movwf	btemp+3
-   299      03F  0212               	movf	toggleSound@track,w
-   300      040  0024               	movwf	4
-   301      041  0200               	movf	0,w
-   302      042  003E               	movwf	btemp+2
-   303      043  0212               	movf	toggleSound@track,w
-   304      044  003C               	movwf	btemp
-   305      045  0C01               	movlw	1
-   306      046  01DC               	addwf	btemp,w
-   307      047  0024               	movwf	4
-   308      048  0200               	movf	0,w
-   309      049  01DE               	addwf	btemp+2,w
-   310      04A  019F               	xorwf	btemp+3,w
-   311      04B  0743               	skipz
-   312      04C  0A4E               	goto	u61
-   313      04D  0A4F               	goto	u60
-   314      04E                     u61:
-   315      04E  0A6E               	goto	l15
-   316      04F                     u60:
-   317      04F                     l583:
-   318      04F  0212               	movf	toggleSound@track,w
-   319      050  0024               	movwf	4
-   320      051  0200               	movf	0,w
-   321      052  0643               	btfsc	3,2
-   322      053  0A55               	goto	u71
-   323      054  0A56               	goto	u70
-   324      055                     u71:
-   325      055  0A6E               	goto	l15
-   326      056                     u70:
-   327      056                     l585:
-   328                           
-   329                           ;./MusicPlayer.h: 27:     {;./MusicPlayer.h: 28:         GPIO ^= 1UL << pinNumber;
-   330      056  0290               	incf	toggleSound@pinNumber,w
-   331      057  003F               	movwf	btemp+3
-   332      058  0C01               	movlw	1
-   333      059  003E               	movwf	btemp+2
-   334      05A  0A5D               	goto	u84
-   335      05B                     u85:
-   336      05B  0403               	clrc
-   337      05C  037E               	rlf	btemp+2,f
-   338      05D                     u84:
-   339      05D  02FF               	decfsz	btemp+3,f
-   340      05E  0A5B               	goto	u85
-   341      05F  021E               	movf	btemp+2,w
-   342      060  003F               	movwf	btemp+3
-   343      061  021F               	movf	btemp+3,w
-   344      062  01A6               	xorwf	6,f	;volatile
-   345      063                     l587:
-   346                           
-   347                           ;./MusicPlayer.h: 29:         TMR0 = initialTMR0;
-   348      063  0211               	movf	toggleSound@initialTMR0,w
-   349      064  0021               	movwf	1	;volatile
-   350      065                     l589:
-   351                           
-   352                           ;./MusicPlayer.h: 30:         (*track).lastTimeUpdate = initialTMR0;
-   353      065  0211               	movf	toggleSound@initialTMR0,w
-   354      066  003F               	movwf	btemp+3
-   355      067  0212               	movf	toggleSound@track,w
-   356      068  003C               	movwf	btemp
-   357      069  0C01               	movlw	1
-   358      06A  01DC               	addwf	btemp,w
-   359      06B  0024               	movwf	4
-   360      06C  021F               	movf	btemp+3,w
-   361      06D  0020               	movwf	0
-   362      06E                     l15:
-   363      06E  0800               	retlw	0
-   364      06F                     __end_of_toggleSound:
-   365                           
-   366                           	psect	jmp_tab
-   367      0FD                     __pjmp_tab:	
-   368                           ;incstack = 0
-   369                           ; Regs used in _toggleSound: [wreg-fsr0h+status,2-btemp+0+btemp+2+btemp+3]
-   370                           
-   371      0FD                     entry__toggleSound:
-   372      0FD  0A3C               	ljmp	_toggleSound
-   373      0FE                     entry__initialize:	
-   374                           ;incstack = 0
-   375                           ; Regs used in _initialize: [wreg]
-   376                           
-   377      0FE  0A6F               	ljmp	_initialize
-   378                           
-   379                           	psect	text2
-   380      06F                     __ptext2:	
-   381 ;; *************** function _initialize *****************
-   382 ;; Defined at:
-   383 ;;		line 11 in file "./MusicPlayer.h"
-   384 ;; Parameters:    Size  Location     Type
-   385 ;;		None
-   386 ;; Auto vars:     Size  Location     Type
-   387 ;;		None
-   388 ;; Return value:  Size  Location     Type
-   389 ;;                  1   10[None  ] void 
-   390 ;; Registers used:
-   391 ;;		wreg
-   392 ;; Tracked objects:
-   393 ;;		On entry : 0/0
-   394 ;;		On exit  : 0/0
-   395 ;;		Unchanged: 0/0
-   396 ;; Data sizes:     COMMON   BANK0
-   397 ;;      Params:         0       0
-   398 ;;      Locals:         0       0
-   399 ;;      Temps:          0       0
-   400 ;;      Totals:         0       0
-   401 ;;Total ram usage:        0 bytes
-   402 ;; Hardware stack levels used: 1
-   403 ;; This function calls:
-   404 ;;		Nothing
-   405 ;; This function is called by:
-   406 ;;		_main
-   407 ;; This function uses a non-reentrant model
-   408 ;;
-   409                           
-   410      06F                     _initialize:	
-   411                           ;psect for function _initialize
+   344      053  0211               	movf	toggleSound@initialTMR0,w
+   345      054  003F               	movwf	btemp+3
+   346      055  0212               	movf	toggleSound@track,w
+   347      056  0024               	movwf	4
+   348      057  0200               	movf	0,w
+   349      058  003E               	movwf	btemp+2
+   350      059  0212               	movf	toggleSound@track,w
+   351      05A  003C               	movwf	btemp
+   352      05B  0C01               	movlw	1
+   353      05C  01DC               	addwf	btemp,w
+   354      05D  0024               	movwf	4
+   355      05E  0200               	movf	0,w
+   356      05F  01DE               	addwf	btemp+2,w
+   357      060  019F               	xorwf	btemp+3,w
+   358      061  0743               	skipz
+   359      062  0A64               	goto	u61
+   360      063  0A65               	goto	u60
+   361      064                     u61:
+   362      064  0A84               	goto	l15
+   363      065                     u60:
+   364      065                     l593:
+   365      065  0212               	movf	toggleSound@track,w
+   366      066  0024               	movwf	4
+   367      067  0200               	movf	0,w
+   368      068  0643               	btfsc	3,2
+   369      069  0A6B               	goto	u71
+   370      06A  0A6C               	goto	u70
+   371      06B                     u71:
+   372      06B  0A84               	goto	l15
+   373      06C                     u70:
+   374      06C                     l595:
+   375                           
+   376                           ;./MusicPlayer.h: 27:     {;./MusicPlayer.h: 28:         GPIO ^= 1UL << pinNumber;
+   377      06C  0290               	incf	toggleSound@pinNumber,w
+   378      06D  003F               	movwf	btemp+3
+   379      06E  0C01               	movlw	1
+   380      06F  003E               	movwf	btemp+2
+   381      070  0A73               	goto	u84
+   382      071                     u85:
+   383      071  0403               	clrc
+   384      072  037E               	rlf	btemp+2,f
+   385      073                     u84:
+   386      073  02FF               	decfsz	btemp+3,f
+   387      074  0A71               	goto	u85
+   388      075  021E               	movf	btemp+2,w
+   389      076  003F               	movwf	btemp+3
+   390      077  021F               	movf	btemp+3,w
+   391      078  01A6               	xorwf	6,f	;volatile
+   392      079                     l597:
+   393                           
+   394                           ;./MusicPlayer.h: 29:         TMR0 = initialTMR0;
+   395      079  0211               	movf	toggleSound@initialTMR0,w
+   396      07A  0021               	movwf	1	;volatile
+   397      07B                     l599:
+   398                           
+   399                           ;./MusicPlayer.h: 30:         (*track).lastTimeUpdate = initialTMR0;
+   400      07B  0211               	movf	toggleSound@initialTMR0,w
+   401      07C  003F               	movwf	btemp+3
+   402      07D  0212               	movf	toggleSound@track,w
+   403      07E  003C               	movwf	btemp
+   404      07F  0C01               	movlw	1
+   405      080  01DC               	addwf	btemp,w
+   406      081  0024               	movwf	4
+   407      082  021F               	movf	btemp+3,w
+   408      083  0020               	movwf	0
+   409      084                     l15:
+   410      084  0800               	retlw	0
+   411      085                     __end_of_toggleSound:
    412                           
-   413      06F                     l579:
-   414                           
-   415                           ;./MusicPlayer.h: 13:     TRIS = 0b1000;
-   416      06F  0C08               	movlw	8
-   417      070  0006               	tris	6
-   418                           
-   419                           ;./MusicPlayer.h: 14:     OPTION = 0b11010100;
-   420      071  0CD4               	movlw	212
-   421      072  0002               	option
-   422      073                     l11:
-   423      073  0800               	retlw	0
-   424      074                     __end_of_initialize:
-   425      01C                     btemp	set	28	;btemp
-   426      01C                     wtemp0	set	28
-   427      01E                     wtemp1	set	30
-   428      01C                     ttemp0	set	28
-   429      01C                     ltemp0	set	28
-   430                           
-   431                           	psect	idloc
-   432                           
-   433                           ;Config register IDLOC0 @ 0x100
-   434                           ;	unspecified, using default values
-   435      100                     	org	256
-   436      100  0FFF               	dw	4095
-   437                           
-   438                           ;Config register IDLOC1 @ 0x101
-   439                           ;	unspecified, using default values
-   440      101                     	org	257
-   441      101  0FFF               	dw	4095
-   442                           
-   443                           ;Config register IDLOC2 @ 0x102
-   444                           ;	unspecified, using default values
-   445      102                     	org	258
-   446      102  0FFF               	dw	4095
-   447                           
-   448                           ;Config register IDLOC3 @ 0x103
-   449                           ;	unspecified, using default values
-   450      103                     	org	259
-   451      103  0FFF               	dw	4095
-   452                           
-   453                           	psect	config
-   454                           
-   455                           ;Config register CONFIG @ 0xFFF
-   456                           ;	Oscillator
-   457                           ;	OSC = 0x1, unprogrammed default
-   458                           ;	Watchdog Timer
-   459                           ;	WDTE = OFF, WDT disabled
-   460                           ;	Code Protect
-   461                           ;	CP = OFF, Code protection off
-   462                           ;	Master Clear Enable
-   463                           ;	MCLRE = ON, GP3/MCLR pin function  is MCLR
-   464      FFF                     	org	4095
-   465      FFF  0FFB               	dw	4091
+   413                           	psect	jmp_tab
+   414      0FD                     __pjmp_tab:	
+   415                           ;incstack = 0
+   416                           ; Regs used in _toggleSound: [wreg-fsr0h+status,2-btemp+0+btemp+2+btemp+3]
+   417                           
+   418      0FD                     entry__toggleSound:
+   419      0FD  0A52               	ljmp	_toggleSound
+   420      0FE                     entry__initialize:	
+   421                           ;incstack = 0
+   422                           ; Regs used in _initialize: [wreg]
+   423                           
+   424      0FE  0A85               	ljmp	_initialize
+   425                           
+   426                           	psect	text2
+   427      085                     __ptext2:	
+   428 ;; *************** function _initialize *****************
+   429 ;; Defined at:
+   430 ;;		line 11 in file "./MusicPlayer.h"
+   431 ;; Parameters:    Size  Location     Type
+   432 ;;		None
+   433 ;; Auto vars:     Size  Location     Type
+   434 ;;		None
+   435 ;; Return value:  Size  Location     Type
+   436 ;;                  1   10[None  ] void 
+   437 ;; Registers used:
+   438 ;;		wreg
+   439 ;; Tracked objects:
+   440 ;;		On entry : 0/0
+   441 ;;		On exit  : 0/0
+   442 ;;		Unchanged: 0/0
+   443 ;; Data sizes:     COMMON   BANK0
+   444 ;;      Params:         0       0
+   445 ;;      Locals:         0       0
+   446 ;;      Temps:          0       0
+   447 ;;      Totals:         0       0
+   448 ;;Total ram usage:        0 bytes
+   449 ;; Hardware stack levels used: 1
+   450 ;; This function calls:
+   451 ;;		Nothing
+   452 ;; This function is called by:
+   453 ;;		_main
+   454 ;; This function uses a non-reentrant model
+   455 ;;
+   456                           
+   457      085                     _initialize:	
+   458                           ;psect for function _initialize
+   459                           
+   460      085                     l589:
+   461                           
+   462                           ;./MusicPlayer.h: 13:     TRIS = 0b1000;
+   463      085  0C08               	movlw	8
+   464      086  0006               	tris	6
+   465                           
+   466                           ;./MusicPlayer.h: 14:     OPTION = 0b11010100;
+   467      087  0CD4               	movlw	212
+   468      088  0002               	option
+   469      089                     l11:
+   470      089  0800               	retlw	0
+   471      08A                     __end_of_initialize:
+   472      01C                     btemp	set	28	;btemp
+   473      01C                     wtemp0	set	28
+   474      01E                     wtemp1	set	30
+   475      01C                     ttemp0	set	28
+   476      01C                     ltemp0	set	28
+   477                           
+   478                           	psect	idloc
+   479                           
+   480                           ;Config register IDLOC0 @ 0x100
+   481                           ;	unspecified, using default values
+   482      100                     	org	256
+   483      100  0FFF               	dw	4095
+   484                           
+   485                           ;Config register IDLOC1 @ 0x101
+   486                           ;	unspecified, using default values
+   487      101                     	org	257
+   488      101  0FFF               	dw	4095
+   489                           
+   490                           ;Config register IDLOC2 @ 0x102
+   491                           ;	unspecified, using default values
+   492      102                     	org	258
+   493      102  0FFF               	dw	4095
+   494                           
+   495                           ;Config register IDLOC3 @ 0x103
+   496                           ;	unspecified, using default values
+   497      103                     	org	259
+   498      103  0FFF               	dw	4095
+   499                           
+   500                           	psect	config
+   501                           
+   502                           ;Config register CONFIG @ 0xFFF
+   503                           ;	Oscillator
+   504                           ;	OSC = 0x1, unprogrammed default
+   505                           ;	Watchdog Timer
+   506                           ;	WDTE = OFF, WDT disabled
+   507                           ;	Code Protect
+   508                           ;	CP = OFF, Code protection off
+   509                           ;	Master Clear Enable
+   510                           ;	MCLRE = ON, GP3/MCLR pin function  is MCLR
+   511      FFF                     	org	4095
+   512      FFF  0FFB               	dw	4091
 
 Data Sizes:
     Strings     0
@@ -493,12 +542,12 @@ Data Sizes:
 Auto Spaces:
     Space          Size  Autos    Used
     COMMON            0      0       0
-    BANK0            14      7       7
+    BANK0            14      9       9
 
 Pointer List with Targets:
 
     toggleSound@track	PTR struct Track size(1) Largest target is 2
-		 -> main@track1(BANK0[2]), 
+		 -> main@track2(BANK0[2]), main@track1(BANK0[2]), 
 
 
 Critical Paths under _main in COMMON
@@ -514,12 +563,12 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 6     6      0     623
-                                              3 BANK0      4     4      0
+ (0) _main                                                 6     6      0    1028
+                                              3 BANK0      6     6      0
                          _initialize
                         _toggleSound
  ---------------------------------------------------------------------------------
- (1) _toggleSound                                          3     1      2     480
+ (1) _toggleSound                                          3     1      2     784
                                               0 BANK0      3     1      2
  ---------------------------------------------------------------------------------
  (1) _initialize                                           0     0      0       0
@@ -542,37 +591,39 @@ BITSFR0              0      0       0       1        0.0%
 SFR0                 0      0       0       1        0.0%
 COMMON               0      0       0       1        0.0%
 STACK                0      0       0       2        0.0%
-BANK0                E      7       7       3       50.0%
+BANK0                E      9       9       3       64.3%
 ABS                  0      0       0       4        0.0%
 DATA                 0      0       0       5        0.0%
 BITBANK0             E      0       0       6        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.40 build 20220703182018 
-Symbol Table                                                                                   Thu Jan 05 16:25:45 2023
+Symbol Table                                                                                   Thu Jan 05 16:42:08 2023
 
-                     l11 0073                       l15 006E                       u60 004F  
-                     u61 004E                       u70 0056                       u71 0055  
-                     u90 001F                       u91 001E                       u84 005D  
-                     u85 005B                       fsr 0004                      l601 0008  
-                    l603 000D                      l605 0016                      l615 0023  
-                    l607 001F                      l617 0028                      l609 0021  
-                    l619 0031                      l581 003D                      l583 004F  
-                    l591 0003                      l585 0056                      l593 0004  
-                    l579 006F                      l587 0063                      l595 0006  
-                    l589 0065                      u100 003A                      u101 0039  
-                    fsr0 0004                      indf 0000                     _GPIO 0006  
-            main@counter 0015                     _TMR0 0001                     _TRIS 0006  
-                   _main 0003                     btemp 001C                     start 0000  
-                  ?_main 0010                    ltemp0 001C                    ttemp0 001C  
-                  status 0003                    wtemp0 001C                    wtemp1 001E  
- toggleSound@initialTMR0 0011          __initialization 0001             __end_of_main 003C  
-                 ??_main 0000                   _OPTION 0000  __end_of__initialization 0001  
-           ?_toggleSound 0010           __pcstackCOMMON 0000     toggleSound@pinNumber 0010  
-             __pmaintext 0003               _initialize 006F                  __ptext1 003C  
-                __ptext2 006F     end_of_initialization 0001               main@track1 0013  
+                     l11 0089                       l15 0084                       u60 0065  
+                     u61 0064                       u70 006C                       u71 006B  
+                     u90 002D                       u91 002C                       u84 0073  
+                     u85 0071                       fsr 0004                      l601 0003  
+                    l611 000A                      l603 0004                      l621 0010  
+                    l613 000C                      l605 0006                      l623 001B  
+                    l615 000E                      l607 0008                      l625 0024  
+                    l609 0009                      l635 0033                      l627 002D  
+                    l637 003E                      l629 0031                      l591 0053  
+                    l639 0047                      l593 0065                      l595 006C  
+                    l589 0085                      l597 0079                      l599 007B  
+                    u100 0050                      u101 004F                      fsr0 0004  
+                    indf 0000                     _GPIO 0006              main@counter 0013  
+                   _TMR0 0001                     _TRIS 0006                     _main 0003  
+                   btemp 001C                     start 0000                    ?_main 0010  
+                  ltemp0 001C                    ttemp0 001C                    status 0003  
+                  wtemp0 001C                    wtemp1 001E   toggleSound@initialTMR0 0011  
+        __initialization 0001             __end_of_main 0052                   ??_main 0000  
+                 _OPTION 0000  __end_of__initialization 0001             ?_toggleSound 0010  
+         __pcstackCOMMON 0000     toggleSound@pinNumber 0010               __pmaintext 0003  
+             _initialize 0085                  __ptext1 0052                  __ptext2 0085  
+   end_of_initialization 0001               main@track1 0015               main@track2 0017  
       entry__toggleSound 00FD              ?_initialize 0010      start_initialization 0001  
               ___latbits 0000            __pcstackBANK0 0010         toggleSound@track 0012  
               __pjmp_tab 00FD         entry__initialize 00FE            ??_toggleSound 0000  
-           ??_initialize 0000       __end_of_initialize 0074      __end_of_toggleSound 006F  
-            _toggleSound 003C  
+           ??_initialize 0000       __end_of_initialize 008A      __end_of_toggleSound 0085  
+            _toggleSound 0052  

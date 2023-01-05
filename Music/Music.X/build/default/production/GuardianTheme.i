@@ -410,6 +410,13 @@ void initialize()
 {
     TRIS = 0b1000;
     OPTION = 0b11010100;
+    struct Track track1;
+    struct Track track2;
+    unsigned short counter;
+    track1.clocks = 30;
+    track2.clocks = 30;
+    track1.lastTimeUpdate = 0;
+    track2.lastTimeUpdate = 0;
 }
 
 struct Track
@@ -437,21 +444,23 @@ void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char ini
 void main(void)
 {
     initialize();
-    struct Track track1;
-    struct Track track2;
-    unsigned short counter;
+
     while(1)
     {
         track1.clocks = 30;
+        track2.clocks = 30;
         for (counter = 0; counter<6000; counter++)
         {
             toggleSound(&track1, 0, TMR0);
+            toggleSound(&track2, 1, TMR0);
         }
 
         track1.clocks = 20;
+        track2.clocks = 20;
         for (counter = 0; counter<6000; counter++)
         {
             toggleSound(&track1, 0, TMR0);
+            toggleSound(&track2, 1, TMR0);
         }
 
     }

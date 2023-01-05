@@ -32,18 +32,26 @@ void main(void)
     struct Track track1;
     struct Track track2;
     unsigned short counter;
+    track1.clocks = 30;
+    track2.clocks = 30;
+    track1.lastTimeUpdate = 0;
+    track2.lastTimeUpdate = 0;
     while(1)
     {
         track1.clocks = 30;
+        track2.clocks = 30;
         for (counter = 0; counter<DURATION; counter++)
         {
             toggleSound(&track1, 0, TMR0);
+            toggleSound(&track2, 1, TMR0);
         }
         
         track1.clocks = 20;
+        track2.clocks = 20;
         for (counter = 0; counter<DURATION; counter++)
         {
             toggleSound(&track1, 0, TMR0);
+            toggleSound(&track2, 1, TMR0);
         }
         
     }
