@@ -405,7 +405,13 @@ extern __bank0 __bit __timeout;
 # 23 "GuardianTheme.c" 2
 
 # 1 "./MusicPlayer.h" 1
-# 12 "./MusicPlayer.h"
+# 11 "./MusicPlayer.h"
+void initialize()
+{
+    TRIS = 0b1000;
+    OPTION = 0b11010100;
+}
+
 struct Track
 {
     unsigned char clocks;
@@ -413,32 +419,13 @@ struct Track
 };
 
 
-void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char* initialTMR0)
+void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char initialTMR0)
 {
     if (initialTMR0 == (unsigned char)((*track).lastTimeUpdate+((*track).clocks)) && (*track).clocks !=0)
     {
         GPIO ^= 1UL << pinNumber;
         TMR0 = initialTMR0;
         (*track).lastTimeUpdate = initialTMR0;
-    }
-}
-void playTracks(struct Track* track1, struct Track* track2)
-{
-    unsigned char initialTMR0 = TMR0;
-    for (unsigned char counter = 0; counter < 255; counter++)
-    {
-        if (initialTMR0 == (unsigned char)((*track1).lastTimeUpdate+((*track1).clocks)) && (*track1).clocks !=0)
-        {
-            GPIO ^= 1UL << 0;
-            TMR0 = initialTMR0;
-            (*track1).lastTimeUpdate = initialTMR0;
-        }
-        if (initialTMR0 == (unsigned char)((*track2).lastTimeUpdate+((*track2).clocks)) && (*track2).clocks !=0)
-        {
-            GPIO ^= 1UL << 1;
-            TMR0 = initialTMR0;
-            (*track2).lastTimeUpdate = initialTMR0;
-        }
     }
 }
 # 24 "GuardianTheme.c" 2
@@ -449,18 +436,29 @@ void playTracks(struct Track* track1, struct Track* track2)
 
 void main(void)
 {
-    unsigned char counter;
-    TRIS = 0b1000;
-    OPTION = 0b11010100;
-    struct Track track1 = {10, TMR0};
-    struct Track track2 = {20, TMR0};
+    initialize();
+    struct Track track1;
+    struct Track track2;
+    unsigned short counter;
     while(1)
     {
-        playTracks(&track1, &track2);
-        playTracks(&track1, &track2);
-        playTracks(&track1, &track2);
-        playTracks(&track1, &track2);
-        playTracks(&track1, &track2);
-        playTracks(&track1, &track2);
+        counter = 0;
+        track1.clocks = 5;
+        track2.clocks = 6;
+        while (counter < 65535)
+        {
+            toggleSound(&track1, 0, TMR0);
+            toggleSound(&track2, 1, TMR0);
+            counter++;
+        }
+        counter = 0;
+        track1.clocks = 7;
+        track2.clocks = 8;
+        while (counter < 65535)
+        {
+            toggleSound(&track1, 0, TMR0);
+            toggleSound(&track2, 1, TMR0);
+            counter++;
+        }
     }
 }

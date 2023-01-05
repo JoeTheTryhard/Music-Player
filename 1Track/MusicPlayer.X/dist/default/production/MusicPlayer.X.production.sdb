@@ -7,7 +7,7 @@
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 D:\Program Files\MPLABX\xc8\2.40\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"25 D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
+"25 D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
 [v _initialize initialize `(v  1 e 1 0 ]
 "30
 [v _playB playB `(v  1 e 1 0 ]
@@ -27,7 +27,7 @@
 [v _OPTION OPTION `VEWuc  1 e 1 @0 ]
 "312
 [v _TRIS TRIS `VEWuc  1 e 1 @6 ]
-"77 D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
+"77 D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "95

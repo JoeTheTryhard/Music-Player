@@ -24,18 +24,12 @@
 "29 D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
 [v _main main `(v  1 e 1 0 ]
 {
+"34
+[v main@counter counter `us  1 a 2 5 ]
 [s S24 Track 2 `uc 1 clocks 1 0 `uc 1 lastTimeUpdate 1 1 ]
 "32
-[v main@track1 track1 `S24  1 a 2 6 ]
-"33
-[v main@track2 track2 `S24  1 a 2 3 ]
-"34
-[v main@counter counter `uc  1 a 1 5 ]
-"31
-[v main@F155 F155 `S24  1 s 2 F155 ]
-"32
-[v main@F157 F157 `S24  1 s 2 F157 ]
-"72
+[v main@track1 track1 `S24  1 a 2 3 ]
+"50
 } 0
 "24 D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
 [v _toggleSound toggleSound `(v  1 e 1 0 ]

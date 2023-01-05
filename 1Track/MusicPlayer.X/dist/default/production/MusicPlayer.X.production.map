@@ -5,17 +5,17 @@ Linker command line:
 -W-3 --edf=D:\Program Files\MPLABX\xc8\2.40\pic\dat\20220703182018_en.msgs \
   -cn -h+dist/default/production\MusicPlayer.X.production.sym \
   --cmf=dist/default/production\MusicPlayer.X.production.cmf -z -Q10F200 \
-  -oC:\Users\Josue\AppData\Local\Temp\xcAs2uc.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Josue\AppData\Local\Temp\xcAs6o8.4 --defsym=__MPLAB_BUILD=1 \
   --fixupoverflow=error \
   -Mdist/default/production/MusicPlayer.X.production.map \
-  --md=C:\Users\Josue\AppData\Local\Temp\xcAs2uc.dat -E1 -ver=XC8 Compiler \
+  --md=C:\Users\Josue\AppData\Local\Temp\xcAs6o8.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-0FEh -ASTRCODE=00h-0FEh -ASTRING=00h-0FEh \
   -AENTRY=00h-0FFh-0FEh -ABANK0=010h-01Dh -ARAM=010h-01Dh -AABS1=010h-01Fh \
   -ACOMMON=01Ch-01Fh -ASFR0=00h-0Fh -ACONFIG=0FFFh-0FFFh -DCONFIG=2 \
   -AIDLOC=0100h-0103h -DIDLOC=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=0ffh,reset_wrap=0h,init,end_init,cinit,clrtext \
   -ppowerup=CODE -pfunctab=ENTRY -pstrings=-STRING -k \
-  C:\Users\Josue\AppData\Local\Temp\xcAs2uc.o \
+  C:\Users\Josue\AppData\Local\Temp\xcAs6o8.o \
   dist/default/production\MusicPlayer.X.production.o 
 
 Object code version is 3.11
@@ -25,7 +25,7 @@ Machine type is 10F200
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Josue\AppData\Local\Temp\xcAs2uc.o
+C:\Users\Josue\AppData\Local\Temp\xcAs6o8.o
                 end_init                              0        0        1        0       0
                 reset_vec                            FF       FF        1      1FE       0
                 config                              FFF      FFF        1        0       4

@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Josue\AppData\Local\Temp\xcAs2uc.o
+$C:\Users\Josue\AppData\Local\Temp\xcAs6o8.o
 reset_vec CODE 0 FF FF 1 2 1
 end_init ENTRY 0 0 0 1 2 1
 config CONFIG 4 FFF FFF 1 2 1
@@ -55,78 +55,78 @@ STRING CE-F8 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MusicPlayer.X.production.o
-1 cinit ENTRY >129:C:\Users\Josue\AppData\Local\Temp\xcAs2uc.s
-1 cinit ENTRY >132:C:\Users\Josue\AppData\Local\Temp\xcAs2uc.s
-1 cinit ENTRY >138:C:\Users\Josue\AppData\Local\Temp\xcAs2uc.s
-1 cinit ENTRY >140:C:\Users\Josue\AppData\Local\Temp\xcAs2uc.s
-2 cinit ENTRY >141:C:\Users\Josue\AppData\Local\Temp\xcAs2uc.s
-C9 text6 CODE >25:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-C9 text6 CODE >27:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-CB text6 CODE >28:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-CD text6 CODE >29:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-97 text5 CODE >39:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-97 text5 CODE >41:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-99 text5 CODE >43:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-9F text5 CODE >44:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-A4 text5 CODE >44:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-B1 text5 CODE >44:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-B5 text5 CODE >44:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-B9 text5 CODE >45:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-4F text4 CODE >61:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-4F text4 CODE >63:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-51 text4 CODE >65:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-55 text4 CODE >66:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-59 text4 CODE >67:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-5E text4 CODE >67:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-6B text4 CODE >67:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-6F text4 CODE >67:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-73 text4 CODE >68:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-3 text3 CODE >30:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-3 text3 CODE >32:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-5 text3 CODE >34:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-9 text3 CODE >35:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-F text3 CODE >36:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-14 text3 CODE >36:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-21 text3 CODE >36:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-25 text3 CODE >36:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-29 text3 CODE >37:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-2A text2 CODE >53:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-2A text2 CODE >55:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-2C text2 CODE >57:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-30 text2 CODE >58:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-34 text2 CODE >59:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-39 text2 CODE >59:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-46 text2 CODE >59:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-4A text2 CODE >59:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-4E text2 CODE >60:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-F9 jmp_tab ENTRY >46:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-FA jmp_tab ENTRY >53:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-FB jmp_tab ENTRY >30:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-FC jmp_tab ENTRY >61:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-FD jmp_tab ENTRY >39:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-FE jmp_tab ENTRY >25:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-74 text1 CODE >46:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-74 text1 CODE >48:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-76 text1 CODE >50:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-7C text1 CODE >51:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-81 text1 CODE >51:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-8E text1 CODE >51:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-92 text1 CODE >51:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-96 text1 CODE >52:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-BA maintext CODE >77:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-BA maintext CODE >79:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-BB maintext CODE >82:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-BC maintext CODE >83:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-BD maintext CODE >84:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-BE maintext CODE >85:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-BF maintext CODE >86:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-C0 maintext CODE >87:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-C1 maintext CODE >88:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-C2 maintext CODE >89:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-C3 maintext CODE >90:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-C4 maintext CODE >91:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-C5 maintext CODE >92:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
-C6 maintext CODE >93:D:\Files\Programing Stuff\C\Baremetal\PassiveBuzzerMusic\1Track\MusicPlayer.X\main.c
+1 cinit ENTRY >129:C:\Users\Josue\AppData\Local\Temp\xcAs6o8.s
+1 cinit ENTRY >132:C:\Users\Josue\AppData\Local\Temp\xcAs6o8.s
+1 cinit ENTRY >138:C:\Users\Josue\AppData\Local\Temp\xcAs6o8.s
+1 cinit ENTRY >140:C:\Users\Josue\AppData\Local\Temp\xcAs6o8.s
+2 cinit ENTRY >141:C:\Users\Josue\AppData\Local\Temp\xcAs6o8.s
+C9 text6 CODE >25:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+C9 text6 CODE >27:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+CB text6 CODE >28:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+CD text6 CODE >29:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+97 text5 CODE >39:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+97 text5 CODE >41:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+99 text5 CODE >43:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+9F text5 CODE >44:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+A4 text5 CODE >44:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+B1 text5 CODE >44:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+B5 text5 CODE >44:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+B9 text5 CODE >45:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+4F text4 CODE >61:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+4F text4 CODE >63:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+51 text4 CODE >65:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+55 text4 CODE >66:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+59 text4 CODE >67:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+5E text4 CODE >67:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+6B text4 CODE >67:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+6F text4 CODE >67:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+73 text4 CODE >68:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+3 text3 CODE >30:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+3 text3 CODE >32:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+5 text3 CODE >34:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+9 text3 CODE >35:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+F text3 CODE >36:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+14 text3 CODE >36:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+21 text3 CODE >36:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+25 text3 CODE >36:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+29 text3 CODE >37:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+2A text2 CODE >53:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+2A text2 CODE >55:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+2C text2 CODE >57:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+30 text2 CODE >58:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+34 text2 CODE >59:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+39 text2 CODE >59:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+46 text2 CODE >59:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+4A text2 CODE >59:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+4E text2 CODE >60:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+F9 jmp_tab ENTRY >46:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+FA jmp_tab ENTRY >53:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+FB jmp_tab ENTRY >30:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+FC jmp_tab ENTRY >61:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+FD jmp_tab ENTRY >39:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+FE jmp_tab ENTRY >25:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+74 text1 CODE >46:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+74 text1 CODE >48:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+76 text1 CODE >50:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+7C text1 CODE >51:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+81 text1 CODE >51:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+8E text1 CODE >51:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+92 text1 CODE >51:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+96 text1 CODE >52:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+BA maintext CODE >77:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+BA maintext CODE >79:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+BB maintext CODE >82:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+BC maintext CODE >83:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+BD maintext CODE >84:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+BE maintext CODE >85:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+BF maintext CODE >86:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+C0 maintext CODE >87:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+C1 maintext CODE >88:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+C2 maintext CODE >89:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+C3 maintext CODE >90:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+C4 maintext CODE >91:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+C5 maintext CODE >92:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
+C6 maintext CODE >93:D:\Files\Programing Stuff\C\Baremetal\Music-Player\1Track\MusicPlayer.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -150,10 +150,10 @@ ltemp0 1C 0 ABS 0 - dist/default/production\MusicPlayer.X.production.o
 __Hstrings 0 0 STRING 0 strings -
 _GPIO 6 0 ABS 0 - dist/default/production\MusicPlayer.X.production.o
 _TRIS 6 0 ABS 0 - dist/default/production\MusicPlayer.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\xcAs2uc.o
+___sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\xcAs6o8.o
 _main 174 0 CODE 0 maintext dist/default/production\MusicPlayer.X.production.o
 btemp 1C 0 ABS 0 - dist/default/production\MusicPlayer.X.production.o
-start 0 0 ENTRY 0 init C:\Users\Josue\AppData\Local\Temp\xcAs2uc.o
+start 0 0 ENTRY 0 init C:\Users\Josue\AppData\Local\Temp\xcAs6o8.o
 __Hpowerup 0 0 CODE 0 powerup -
 ttemp0 1C 0 ABS 0 - dist/default/production\MusicPlayer.X.production.o
 wtemp0 1C 0 ABS 0 - dist/default/production\MusicPlayer.X.production.o
@@ -163,13 +163,13 @@ __Hclrtext 6 0 ENTRY 0 clrtext -
 __pjmp_tab 1F2 0 ENTRY 0 jmp_tab dist/default/production\MusicPlayer.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of_playNothing 12E 0 CODE 0 text1 dist/default/production\MusicPlayer.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\xcAs2uc.o
-___stacklo 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\xcAs2uc.o
+___stackhi 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\xcAs6o8.o
+___stacklo 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\xcAs6o8.o
 __Hjmp_tab 0 0 ABS 0 jmp_tab -
 start_initialization 2 0 ENTRY 0 cinit dist/default/production\MusicPlayer.X.production.o
 _OPTION 0 0 ABS 0 - dist/default/production\MusicPlayer.X.production.o
 __pcstackBANK0 10 0 BANK0 1 cstackBANK0 dist/default/production\MusicPlayer.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\xcAs2uc.o
+___int_sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\xcAs6o8.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hcinit 6 0 ENTRY 0 cinit -
 __Hidloc 208 0 IDLOC 5 idloc -
@@ -195,7 +195,7 @@ __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 FF 0 ABS 0 - -
 __S1 13 0 ABS 0 - -
-reset_vec 1FE 0 CODE 0 reset_vec C:\Users\Josue\AppData\Local\Temp\xcAs2uc.o
+reset_vec 1FE 0 CODE 0 reset_vec C:\Users\Josue\AppData\Local\Temp\xcAs6o8.o
 play2Nothing@i 11 0 BANK0 1 cstackBANK0 dist/default/production\MusicPlayer.X.production.o
 __pmaintext 174 0 CODE 0 maintext dist/default/production\MusicPlayer.X.production.o
 entry__playNothing 1F2 0 ENTRY 0 jmp_tab dist/default/production\MusicPlayer.X.production.o

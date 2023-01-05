@@ -11,18 +11,19 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Josue\AppData\Local\Temp\xcAs52c.o
+$C:\Users\Josue\AppData\Local\Temp\xcAs2jk.o
+reset_wrap ENTRY 0 0 0 1 2 1
 reset_vec CODE 0 FF FF 1 2 1
-end_init ENTRY 0 0 0 1 2 1
+end_init ENTRY 0 1 1 1 2 1
 config CONFIG 4 FFF FFF 1 2 1
 $dist/default/debug\Music.X.debug.o
-cinit ENTRY 0 1 1 6 2 1
+cinit ENTRY 0 2 2 2 2 1
 idloc IDLOC 5 0 0 104 2 1
-text1 CODE 0 7 7 5E 2 1
-maintext CODE 0 65 65 2E 2 1
-cstackBANK0 BANK0 1 10 10 8 1 1
-bssBANK0 BANK0 1 18 18 4 1 1
-jmp_tab ENTRY 0 FE FE 1 2 1
+text1 CODE 0 4D 4D 33 2 1
+text2 CODE 0 80 80 5 2 1
+maintext CODE 0 4 4 49 2 1
+cstackBANK0 BANK0 1 10 10 9 1 1
+jmp_tab ENTRY 0 FD FD 2 2 1
 config CONFIG 4 FFF FFF 1 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -30,11 +31,13 @@ config CONFIG 4 FFF FFF 1 2 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-ENTRY 93-FD 2
-CODE 93-FD 2
+RAM 19-1B 1
+BANK0 19-1B 1
+ENTRY 85-FC 2
+CODE 85-FC 2
 SFR0 0-F 1
-STRCODE 93-FD 2
-STRING 93-FD 2
+STRCODE 85-FC 2
+STRING 85-FC 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -49,42 +52,46 @@ STRING 93-FD 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\Music.X.debug.o
-1 cinit ENTRY >128:C:\Users\Josue\AppData\Local\Temp\xcAs52c.s
-1 cinit ENTRY >131:C:\Users\Josue\AppData\Local\Temp\xcAs52c.s
-1 cinit ENTRY >145:C:\Users\Josue\AppData\Local\Temp\xcAs52c.s
-2 cinit ENTRY >146:C:\Users\Josue\AppData\Local\Temp\xcAs52c.s
-3 cinit ENTRY >147:C:\Users\Josue\AppData\Local\Temp\xcAs52c.s
-4 cinit ENTRY >148:C:\Users\Josue\AppData\Local\Temp\xcAs52c.s
-5 cinit ENTRY >154:C:\Users\Josue\AppData\Local\Temp\xcAs52c.s
-5 cinit ENTRY >156:C:\Users\Josue\AppData\Local\Temp\xcAs52c.s
-6 cinit ENTRY >157:C:\Users\Josue\AppData\Local\Temp\xcAs52c.s
-FE jmp_tab ENTRY >28:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-7 text1 CODE >28:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-8 text1 CODE >30:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-A text1 CODE >31:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-B text1 CODE >33:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-19 text1 CODE >33:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-24 text1 CODE >35:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-28 text1 CODE >36:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-2A text1 CODE >37:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-33 text1 CODE >39:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-41 text1 CODE >39:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-4C text1 CODE >41:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-50 text1 CODE >42:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-52 text1 CODE >43:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-5B text1 CODE >45:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-64 text1 CODE >46:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
-65 maintext CODE >29:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
-65 maintext CODE >32:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
-67 maintext CODE >33:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
-69 maintext CODE >34:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
-71 maintext CODE >35:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
-79 maintext CODE >38:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
-7D maintext CODE >39:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
-81 maintext CODE >40:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
-85 maintext CODE >41:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
-89 maintext CODE >42:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
-8D maintext CODE >43:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+2 cinit ENTRY >127:C:\Users\Josue\AppData\Local\Temp\xcAs2jk.s
+2 cinit ENTRY >130:C:\Users\Josue\AppData\Local\Temp\xcAs2jk.s
+2 cinit ENTRY >136:C:\Users\Josue\AppData\Local\Temp\xcAs2jk.s
+2 cinit ENTRY >138:C:\Users\Josue\AppData\Local\Temp\xcAs2jk.s
+3 cinit ENTRY >139:C:\Users\Josue\AppData\Local\Temp\xcAs2jk.s
+80 text2 CODE >13:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+82 text2 CODE >14:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+84 text2 CODE >15:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+FD jmp_tab ENTRY >24:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+FE jmp_tab ENTRY >11:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+4D text1 CODE >24:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+4E text1 CODE >26:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+5C text1 CODE >26:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+67 text1 CODE >28:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+6C text1 CODE >28:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+74 text1 CODE >29:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+76 text1 CODE >30:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+7F text1 CODE >32:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
+4 maintext CODE >29:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+4 maintext CODE >31:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+5 maintext CODE >37:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+7 maintext CODE >38:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+9 maintext CODE >39:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+B maintext CODE >40:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+C maintext CODE >42:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+11 maintext CODE >43:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+17 maintext CODE >44:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+1C maintext CODE >44:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+20 maintext CODE >40:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+21 maintext CODE >40:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+28 maintext CODE >46:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+2A maintext CODE >47:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+2C maintext CODE >48:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+2E maintext CODE >49:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+2F maintext CODE >51:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+34 maintext CODE >52:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+3A maintext CODE >53:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+3F maintext CODE >53:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+43 maintext CODE >49:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
+44 maintext CODE >49:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X\GuardianTheme.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -99,99 +106,98 @@ B text1 CODE >33:D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.
 %SYMTAB
 ___latbits 0 0 ABS 0 - dist/default/debug\Music.X.debug.o
 __Hspace_0 100 0 ABS 0 - -
-__Hspace_1 1C 0 ABS 0 - -
+__Hspace_1 19 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_4 1FFF 0 ABS 0 - -
-_playTracks E 0 CODE 0 text1 dist/default/debug\Music.X.debug.o
+__end_of_initialize 10A 0 CODE 0 text2 dist/default/debug\Music.X.debug.o
+_toggleSound 9A 0 CODE 0 text1 dist/default/debug\Music.X.debug.o
 ltemp0 1C 0 ABS 0 - dist/default/debug\Music.X.debug.o
 __Hstrings 0 0 STRING 0 strings -
 _GPIO 6 0 ABS 0 - dist/default/debug\Music.X.debug.o
 _TMR0 1 0 ABS 0 - dist/default/debug\Music.X.debug.o
 _TRIS 6 0 ABS 0 - dist/default/debug\Music.X.debug.o
-___sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\xcAs52c.o
-_main CA 0 CODE 0 maintext dist/default/debug\Music.X.debug.o
+___sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\xcAs2jk.o
+_main 8 0 CODE 0 maintext dist/default/debug\Music.X.debug.o
 btemp 1C 0 ABS 0 - dist/default/debug\Music.X.debug.o
-start 0 0 ENTRY 0 init C:\Users\Josue\AppData\Local\Temp\xcAs52c.o
-playTracks@counter 11 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
+toggleSound@track 12 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
+toggleSound@pinNumber 10 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
+start 2 0 ENTRY 0 init C:\Users\Josue\AppData\Local\Temp\xcAs2jk.o
 __Hpowerup 0 0 CODE 0 powerup -
 ttemp0 1C 0 ABS 0 - dist/default/debug\Music.X.debug.o
 wtemp0 1C 0 ABS 0 - dist/default/debug\Music.X.debug.o
 wtemp1 1E 0 ABS 0 - dist/default/debug\Music.X.debug.o
 __Hfunctab 0 0 ENTRY 0 functab -
-__end_of_playTracks CA 0 CODE 0 text1 dist/default/debug\Music.X.debug.o
-__Hclrtext E 0 ENTRY 0 clrtext -
-__pjmp_tab 1FC 0 ENTRY 0 jmp_tab dist/default/debug\Music.X.debug.o
+__Hclrtext 8 0 ENTRY 0 clrtext -
+__pjmp_tab 1FA 0 ENTRY 0 jmp_tab dist/default/debug\Music.X.debug.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\xcAs52c.o
-___stacklo 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\xcAs52c.o
+___stackhi 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\xcAs2jk.o
+___stacklo 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\xcAs2jk.o
 __Hjmp_tab 0 0 ABS 0 jmp_tab -
-playTracks@initialTMR0 13 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
-start_initialization 2 0 ENTRY 0 cinit dist/default/debug\Music.X.debug.o
+main@counter 13 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
+start_initialization 4 0 ENTRY 0 cinit dist/default/debug\Music.X.debug.o
 _OPTION 0 0 ABS 0 - dist/default/debug\Music.X.debug.o
 __pcstackBANK0 10 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
-___int_sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\xcAs52c.o
+___int_sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\xcAs2jk.o
 __Hbank0 0 0 ABS 0 bank0 -
-__Hcinit E 0 ENTRY 0 cinit -
+__Hcinit 8 0 ENTRY 0 cinit -
 __Hidloc 208 0 IDLOC 5 idloc -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 2000 0 CONFIG 4 config -
+__end_of_toggleSound 100 0 CODE 0 text1 dist/default/debug\Music.X.debug.o
 __Lbank0 0 0 ABS 0 bank0 -
-__Lcinit 2 0 ENTRY 0 cinit -
+__Lcinit 4 0 ENTRY 0 cinit -
 __Lidloc 0 0 IDLOC 5 idloc -
 __Lstack 0 0 STACK 2 stack -
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hinit 0 0 ENTRY 0 init -
+__Hinit 2 0 ENTRY 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
-__Linit 0 0 ENTRY 0 init -
+__Linit 2 0 ENTRY 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 FF 0 ABS 0 - -
-__S1 1C 0 ABS 0 - -
-reset_vec 1FE 0 CODE 0 reset_vec C:\Users\Josue\AppData\Local\Temp\xcAs52c.o
-__LbssBANK0 0 0 ABS 0 bssBANK0 -
-__pmaintext CA 0 CODE 0 maintext dist/default/debug\Music.X.debug.o
+__S1 19 0 ABS 0 - -
+reset_vec 1FE 0 CODE 0 reset_vec C:\Users\Josue\AppData\Local\Temp\xcAs2jk.o
+__pmaintext 8 0 CODE 0 maintext dist/default/debug\Music.X.debug.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
-main@F160 1A 0 BANK0 1 bssBANK0 dist/default/debug\Music.X.debug.o
-main@F162 18 0 BANK0 1 bssBANK0 dist/default/debug\Music.X.debug.o
+entry__initialize 1FC 0 ENTRY 0 jmp_tab dist/default/debug\Music.X.debug.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
-__Lend_init 0 0 ENTRY 0 end_init -
+__Lend_init 2 0 ENTRY 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization A 0 ENTRY 0 cinit dist/default/debug\Music.X.debug.o
+end_of_initialization 4 0 ENTRY 0 cinit dist/default/debug\Music.X.debug.o
 __Lstrings 0 0 STRING 0 strings -
 __Hreset_vec 200 0 CODE 0 reset_vec -
-__HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 E 0 CODE 0 text1 dist/default/debug\Music.X.debug.o
+__ptext1 9A 0 CODE 0 text1 dist/default/debug\Music.X.debug.o
+__ptext2 100 0 CODE 0 text2 dist/default/debug\Music.X.debug.o
+entry__toggleSound 1FA 0 ENTRY 0 jmp_tab dist/default/debug\Music.X.debug.o
 __Lpowerup 0 0 CODE 0 powerup -
-entry__playTracks 1FC 0 ENTRY 0 jmp_tab dist/default/debug\Music.X.debug.o
 __Lreset_vec 1FE 0 CODE 0 reset_vec -
-playTracks@track1 12 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
-playTracks@track2 10 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
-__end_of__initialization A 0 ENTRY 0 cinit dist/default/debug\Music.X.debug.o
+__end_of__initialization 4 0 ENTRY 0 cinit dist/default/debug\Music.X.debug.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__Lclrtext E 0 ENTRY 0 clrtext -
-main@track1 14 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
-main@track2 16 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
+__Lclrtext 8 0 ENTRY 0 clrtext -
+main@track1 15 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
+main@track2 17 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
 __pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/debug\Music.X.debug.o
-__Hreset_wrap 0 0 ENTRY 0 reset_wrap -
-__Hend_init 2 0 ENTRY 0 end_init -
-__end_of_main 126 0 CODE 0 maintext dist/default/debug\Music.X.debug.o
+_initialize 100 0 CODE 0 text2 dist/default/debug\Music.X.debug.o
+__Hreset_wrap 2 0 ENTRY 0 reset_wrap -
+__Hend_init 4 0 ENTRY 0 end_init -
+__end_of_main 9A 0 CODE 0 maintext dist/default/debug\Music.X.debug.o
+toggleSound@initialTMR0 11 0 BANK0 1 cstackBANK0 dist/default/debug\Music.X.debug.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-__initialization 2 0 ENTRY 0 cinit dist/default/debug\Music.X.debug.o
-__pbssBANK0 18 0 BANK0 1 bssBANK0 dist/default/debug\Music.X.debug.o
+__initialization 4 0 ENTRY 0 cinit dist/default/debug\Music.X.debug.o
 __Ljmp_tab 0 0 ABS 0 jmp_tab -
 __Lreset_wrap 0 0 ENTRY 0 reset_wrap -
 # %SPLITSTAB Section
@@ -219,11 +225,11 @@ __Lreset_wrap 0 0 ENTRY 0 reset_wrap -
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text1 0 7 E 8C 2
-cstackBANK0 1 10 10 C 1
-reset_wrap 0 0 0 7 2
+maintext 0 4 8 81 2
+cstackBANK0 1 10 10 9 1
+reset_wrap 0 0 0 4 2
 reset_vec 0 FF 1FE 1 2
-jmp_tab 0 FE 1FC 1 2
+jmp_tab 0 FD 1FA 2 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
