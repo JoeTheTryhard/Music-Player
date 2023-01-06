@@ -405,18 +405,11 @@ extern __bank0 __bit __timeout;
 # 23 "GuardianTheme.c" 2
 
 # 1 "./MusicPlayer.h" 1
-# 11 "./MusicPlayer.h"
+# 13 "./MusicPlayer.h"
 void initialize()
 {
     TRIS = 0b1000;
-    OPTION = 0b11010100;
-    struct Track track1;
-    struct Track track2;
-    unsigned short counter;
-    track1.clocks = 30;
-    track2.clocks = 30;
-    track1.lastTimeUpdate = 0;
-    track2.lastTimeUpdate = 0;
+    OPTION = 0b11010101;
 }
 
 struct Track
@@ -435,6 +428,17 @@ void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char ini
         (*track).lastTimeUpdate = initialTMR0;
     }
 }
+
+void playSound(struct Track* track1, struct Track* track2)
+{
+    for (unsigned short counter = 0; counter<6000; counter++)
+    {
+        toggleSound(track1, 0, TMR0);
+        toggleSound(track2, 1, TMR0);
+    }
+
+
+}
 # 24 "GuardianTheme.c" 2
 
 
@@ -444,24 +448,17 @@ void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char ini
 void main(void)
 {
     initialize();
-
+    struct Track track1;
+    struct Track track2;
     while(1)
     {
-        track1.clocks = 30;
-        track2.clocks = 30;
-        for (counter = 0; counter<6000; counter++)
-        {
-            toggleSound(&track1, 0, TMR0);
-            toggleSound(&track2, 1, TMR0);
-        }
-
-        track1.clocks = 20;
+        track1.clocks = 50;
         track2.clocks = 20;
-        for (counter = 0; counter<6000; counter++)
-        {
-            toggleSound(&track1, 0, TMR0);
-            toggleSound(&track2, 1, TMR0);
-        }
-
+        playSound(&track1, &track2);
+        playSound(&track1, &track2);
+        track1.clocks = 2;
+        track2.clocks = 2;
+        playSound(&track1, &track2);
+        playSound(&track1, &track2);
     }
 }

@@ -5,16 +5,16 @@ Linker command line:
 -W-3 --edf=D:\Program Files\MPLABX\xc8\2.40\pic\dat\20220703182018_en.msgs \
   -cn -h+dist/default/production\Music.X.production.sym \
   --cmf=dist/default/production\Music.X.production.cmf -z -Q10F200 \
-  -oC:\Users\Josue\AppData\Local\Temp\xcAs1ek.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Josue\AppData\Local\Temp\xcAs99c.4 --defsym=__MPLAB_BUILD=1 \
   --fixupoverflow=error -Mdist/default/production/Music.X.production.map \
-  --md=C:\Users\Josue\AppData\Local\Temp\xcAs1ek.dat -E1 -ver=XC8 Compiler \
+  --md=C:\Users\Josue\AppData\Local\Temp\xcAs99c.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-0FEh -ASTRCODE=00h-0FEh -ASTRING=00h-0FEh \
   -AENTRY=00h-0FFh-0FEh -ABANK0=010h-01Dh -ARAM=010h-01Dh -AABS1=010h-01Fh \
   -ACOMMON=01Ch-01Fh -ASFR0=00h-0Fh -ACONFIG=0FFFh-0FFFh -DCONFIG=2 \
   -AIDLOC=0100h-0103h -DIDLOC=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=0ffh,reset_wrap=0h,init,end_init,cinit,clrtext \
   -ppowerup=CODE -pfunctab=ENTRY -pstrings=-STRING -k \
-  C:\Users\Josue\AppData\Local\Temp\xcAs1ek.o \
+  C:\Users\Josue\AppData\Local\Temp\xcAs99c.o \
   dist/default/production\Music.X.production.o 
 
 Object code version is 3.11
@@ -24,7 +24,7 @@ Machine type is 10F200
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Josue\AppData\Local\Temp\xcAs1ek.o
+C:\Users\Josue\AppData\Local\Temp\xcAs99c.o
                 end_init                              0        0        1        0       0
                 reset_vec                            FF       FF        1      1FE       0
                 config                              FFF      FFF        1        0       4
@@ -32,18 +32,20 @@ dist/default/production\Music.X.production.o
                 cinit                                 1        1        2        0       0
                 config                              FFF      FFF        1        0       4
                 idloc                                 0        0      104        0       5
-                text2                                85       85        5        6       0
-                jmp_tab                              FD       FD        2      1FA       0
-                text1                                52       52       33        6       0
-                maintext                              3        3       4F        6       0
-                cstackBANK0                          10       10        9       10       1
+                text3                                72       72        5        6       0
+                text2                                 3        3       33        6       0
+                jmp_tab                              FC       FC        3      1F8       0
+                text1                                36       36       21        6       0
+                maintext                             57       57       1B        6       0
+                cstackBANK0                          10       10        B       10       1
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
                 reset_vec                            FF       FF        1         0
-                text2                                85       85        5         0
-                text1                                52       52       33         0
-                maintext                              3        3       4F         0
+                text3                                72       72        5         0
+                text2                                 3        3       33         0
+                text1                                36       36       21         0
+                maintext                             57       57       1B         0
 
         CLASS   STRCODE        
 
@@ -52,10 +54,10 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   ENTRY          
                 end_init                              0        0        1         0
                 cinit                                 1        1        2         0
-                jmp_tab                              FD       FD        2         0
+                jmp_tab                              FC       FC        3         0
 
         CLASS   BANK0          
-                cstackBANK0                          10       10        9         1
+                cstackBANK0                          10       10        B         1
 
         CLASS   RAM            
 
@@ -81,22 +83,22 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_wrap                     000000  000003  000003         0       0  ENTRY       2
-                maintext                       000003  000087  00008A         6       0  CODE        2
-                cstackBANK0                    000010  000009  000019        10       1  BANK0       1
-                jmp_tab                        0000FD  000002  0000FF       1FA       0  ENTRY       2
+                text2                          000003  000074  000077         6       0  CODE        2
+                cstackBANK0                    000010  00000B  00001B        10       1  BANK0       1
+                jmp_tab                        0000FC  000003  0000FF       1F8       0  ENTRY       2
                 reset_vec                      0000FF  000001  000100       1FE       0  CODE        2
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0019-001B              3           1
-        CODE             008A-00FC             73           2
-        ENTRY            008A-00FC             73           2
-        RAM              0019-001B              3           1
+        BANK0            001B-001B              1           1
+        CODE             0077-00FB             85           2
+        ENTRY            0077-00FB             85           2
+        RAM              001B-001B              1           1
         SFR0             0000-000F             10           1
-        STRCODE          008A-00FC             73           2
-        STRING           008A-00FC             73           2
+        STRCODE          0077-00FB             85           2
+        STRING           0077-00FB             85           2
 
                                   Symbol Table
 
@@ -125,7 +127,7 @@ __Hreset_vec             reset_vec    0100
 __Hreset_wrap            reset_wrap   0000
 __Hsfr0                  sfr0         0000
 __Hspace_0               (abs)        0100
-__Hspace_1               (abs)        0019
+__Hspace_1               (abs)        001B
 __Hspace_2               (abs)        0000
 __Hspace_4               (abs)        1FFF
 __Hstack                 stack        0000
@@ -159,34 +161,40 @@ __Lstack                 stack        0000
 __Lstrings               strings      0000
 __Ltext                  text         0000
 __S0                     (abs)        00FF
-__S1                     (abs)        0019
+__S1                     (abs)        001B
 ___int_sp                stack        0000
 ___latbits               (abs)        0000
 ___sp                    stack        0000
 ___stackhi               (abs)        0000
 ___stacklo               (abs)        0000
 __end_of__initialization cinit        0001
-__end_of_initialize      text2        008A
-__end_of_main            maintext     0052
-__end_of_toggleSound     text1        0085
+__end_of_initialize      text3        0077
+__end_of_main            maintext     0072
+__end_of_playSound       text1        0057
+__end_of_toggleSound     text2        0036
 __initialization         cinit        0001
 __pcstackBANK0           cstackBANK0  0010
 __pcstackCOMMON          cstackCOMMON 0000
-__pjmp_tab               jmp_tab      00FD
-__pmaintext              maintext     0003
-__ptext1                 text1        0052
-__ptext2                 text2        0085
-_initialize              text2        0085
-_main                    maintext     0003
-_toggleSound             text1        0052
+__pjmp_tab               jmp_tab      00FC
+__pmaintext              maintext     0057
+__ptext1                 text1        0036
+__ptext2                 text2        0003
+__ptext3                 text3        0072
+_initialize              text3        0072
+_main                    maintext     0057
+_playSound               text1        0036
+_toggleSound             text2        0003
 btemp                    (abs)        001C
 end_of_initialization    cinit        0001
 entry__initialize        jmp_tab      00FE
+entry__playSound         jmp_tab      00FC
 entry__toggleSound       jmp_tab      00FD
 ltemp0                   (abs)        001C
-main@counter             cstackBANK0  0013
-main@track1              cstackBANK0  0015
-main@track2              cstackBANK0  0017
+main@track1              cstackBANK0  0017
+main@track2              cstackBANK0  0019
+playSound@counter        cstackBANK0  0015
+playSound@track1         cstackBANK0  0014
+playSound@track2         cstackBANK0  0013
 reset_vec                reset_vec    00FF
 start                    init         0000
 start_initialization     cinit        0001
@@ -202,15 +210,16 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 GuardianTheme.c
-		_main          		CODE           	0003	0000	79
+		_main          		CODE           	0057	0000	27
 
-GuardianTheme.c estimated size: 79
+GuardianTheme.c estimated size: 27
 
 ./MusicPlayer.h
-		_toggleSound   		CODE           	0052	0000	51
-		_initialize    		CODE           	0085	0000	5
+		_playSound     		CODE           	0036	0000	33
+		_toggleSound   		CODE           	0003	0000	51
+		_initialize    		CODE           	0072	0000	5
 
-./MusicPlayer.h estimated size: 56
+./MusicPlayer.h estimated size: 89
 
 shared
 		__initialization		ENTRY          	0001	0000	1

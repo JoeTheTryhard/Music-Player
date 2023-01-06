@@ -409,7 +409,7 @@ extern __bank0 __bit __timeout;
 void initialize()
 {
     TRIS = 0b1000;
-    OPTION = 0b11010100;
+    OPTION = 0b11010110;
 }
 
 struct Track
@@ -421,7 +421,7 @@ struct Track
 
 void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char initialTMR0)
 {
-    if (initialTMR0 == (unsigned char)((*track).lastTimeUpdate+((*track).clocks)) && (*track).clocks !=0)
+    if (initialTMR0 == (unsigned char)((*track).lastTimeUpdate+((*track).clocks)))
     {
         GPIO ^= 1UL << pinNumber;
         TMR0 = initialTMR0;
@@ -440,25 +440,27 @@ void main(void)
     struct Track track1;
     struct Track track2;
     unsigned short counter;
+    track1.clocks = 29;
+    track2.clocks = 30;
+    track1.lastTimeUpdate = 0;
+    track2.lastTimeUpdate = 0;
     while(1)
     {
-        counter = 0;
-        track1.clocks = 5;
+        track1.clocks = 3;
+        track2.clocks = 2;
+        for (counter = 0; counter<6000; counter++)
+        {
+            toggleSound(&track1, 0, TMR0);
+            toggleSound(&track2, 1, TMR0);
+        }
+
+        track1.clocks = 6;
         track2.clocks = 6;
-        while (counter < 65535)
+        for (counter = 0; counter<6000; counter++)
         {
             toggleSound(&track1, 0, TMR0);
             toggleSound(&track2, 1, TMR0);
-            counter++;
         }
-        counter = 0;
-        track1.clocks = 7;
-        track2.clocks = 8;
-        while (counter < 65535)
-        {
-            toggleSound(&track1, 0, TMR0);
-            toggleSound(&track2, 1, TMR0);
-            counter++;
-        }
+
     }
 }

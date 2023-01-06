@@ -22,7 +22,7 @@
 
 #include <xc.h>
 #include "MusicPlayer.h"
-#define DURATION 6000 // Value must be between 0 and 65535
+
 
 #define _XTAL_FREQ 4000000
 
@@ -31,29 +31,18 @@ void main(void)
     initialize();
     struct Track track1;
     struct Track track2;
-    unsigned short counter;
-    track1.clocks = 30;
-    track2.clocks = 30;
-    track1.lastTimeUpdate = 0;
-    track2.lastTimeUpdate = 0;
     while(1)
     {
-        track1.clocks = 30;
-        track2.clocks = 30;
-        for (counter = 0; counter<DURATION; counter++)
-        {
-            toggleSound(&track1, 0, TMR0);
-            toggleSound(&track2, 1, TMR0);
-        }
-        
-        track1.clocks = 20;
+        track1.clocks = 50;
         track2.clocks = 20;
-        for (counter = 0; counter<DURATION; counter++)
-        {
-            toggleSound(&track1, 0, TMR0);
-            toggleSound(&track2, 1, TMR0);
-        }
-        
+        playSound(&track1, &track2); 
+        playSound(&track1, &track2); 
+        track1.clocks = 2;
+        track2.clocks = 2;
+        playSound(&track1, &track2); 
+        playSound(&track1, &track2);
     }
 }
+
+
 

@@ -55,8 +55,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./MusicPlayer.h: 13:     TRIS = 0b1000;
 [e = _TRIS -> -> 8 `i `uc ]
 "14
-[; ;./MusicPlayer.h: 14:     OPTION = 0b11010100;
-[e = _OPTION -> -> 212 `i `uc ]
+[; ;./MusicPlayer.h: 14:     OPTION = 0b11010110;
+[e = _OPTION -> -> 214 `i `uc ]
 "15
 [; ;./MusicPlayer.h: 15: }
 [e :UE 17 ]
@@ -77,8 +77,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./MusicPlayer.h: 25: {
 [f ]
 "26
-[; ;./MusicPlayer.h: 26:     if (initialTMR0 == (unsigned char)((*track).lastTimeUpdate+((*track).clocks)) && (*track).clocks !=0)
-[e $ ! && == -> _initialTMR0 `i -> -> + -> . *U _track 1 `i -> . *U _track 0 `i `uc `i != -> . *U _track 0 `i -> 0 `i 20  ]
+[; ;./MusicPlayer.h: 26:     if (initialTMR0 == (unsigned char)((*track).lastTimeUpdate+((*track).clocks)))
+[e $ ! == -> _initialTMR0 `i -> -> + -> . *U _track 1 `i -> . *U _track 0 `i `uc `i 20  ]
 "27
 [; ;./MusicPlayer.h: 27:     {
 {
@@ -121,84 +121,88 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;GuardianTheme.c: 34:     unsigned short counter;
 [v _counter `us ~T0 @X0 1 a ]
 "35
-[; ;GuardianTheme.c: 35:     while(1)
-[e :U 23 ]
+[; ;GuardianTheme.c: 35:     track1.clocks = 29;
+[e = . _track1 0 -> -> 29 `i `uc ]
 "36
-[; ;GuardianTheme.c: 36:     {
-{
+[; ;GuardianTheme.c: 36:     track2.clocks = 30;
+[e = . _track2 0 -> -> 30 `i `uc ]
 "37
-[; ;GuardianTheme.c: 37:         counter = 0;
-[e = _counter -> -> 0 `i `us ]
+[; ;GuardianTheme.c: 37:     track1.lastTimeUpdate = 0;
+[e = . _track1 1 -> -> 0 `i `uc ]
 "38
-[; ;GuardianTheme.c: 38:         track1.clocks = 5;
-[e = . _track1 0 -> -> 5 `i `uc ]
+[; ;GuardianTheme.c: 38:     track2.lastTimeUpdate = 0;
+[e = . _track2 1 -> -> 0 `i `uc ]
 "39
-[; ;GuardianTheme.c: 39:         track2.clocks = 6;
-[e = . _track2 0 -> -> 6 `i `uc ]
+[; ;GuardianTheme.c: 39:     while(1)
+[e :U 23 ]
 "40
-[; ;GuardianTheme.c: 40:         while (counter < 65535)
-[e $U 25  ]
-[e :U 26 ]
+[; ;GuardianTheme.c: 40:     {
+{
 "41
-[; ;GuardianTheme.c: 41:         {
-{
+[; ;GuardianTheme.c: 41:         track1.clocks = 3;
+[e = . _track1 0 -> -> 3 `i `uc ]
 "42
-[; ;GuardianTheme.c: 42:             toggleSound(&track1, 0, TMR0);
-[e ( _toggleSound (3 , , &U _track1 -> -> 0 `i `uc _TMR0 ]
+[; ;GuardianTheme.c: 42:         track2.clocks = 2;
+[e = . _track2 0 -> -> 2 `i `uc ]
 "43
-[; ;GuardianTheme.c: 43:             toggleSound(&track2, 1, TMR0);
-[e ( _toggleSound (3 , , &U _track2 -> -> 1 `i `uc _TMR0 ]
-"44
-[; ;GuardianTheme.c: 44:             counter++;
-[e ++ _counter -> -> 1 `i `us ]
-"45
-[; ;GuardianTheme.c: 45:         }
-}
-[e :U 25 ]
-"40
-[; ;GuardianTheme.c: 40:         while (counter < 65535)
-[e $ < -> _counter `l -> 65535 `l 26  ]
-[e :U 27 ]
-"46
-[; ;GuardianTheme.c: 46:         counter = 0;
-[e = _counter -> -> 0 `i `us ]
-"47
-[; ;GuardianTheme.c: 47:         track1.clocks = 7;
-[e = . _track1 0 -> -> 7 `i `uc ]
-"48
-[; ;GuardianTheme.c: 48:         track2.clocks = 8;
-[e = . _track2 0 -> -> 8 `i `uc ]
-"49
-[; ;GuardianTheme.c: 49:         while (counter < 65535)
-[e $U 28  ]
-[e :U 29 ]
-"50
-[; ;GuardianTheme.c: 50:         {
+[; ;GuardianTheme.c: 43:         for (counter = 0; counter<6000; counter++)
 {
-"51
-[; ;GuardianTheme.c: 51:             toggleSound(&track1, 0, TMR0);
+[e = _counter -> -> 0 `i `us ]
+[e $ < -> _counter `ui -> -> 6000 `i `ui 25  ]
+[e $U 26  ]
+[e :U 25 ]
+"44
+[; ;GuardianTheme.c: 44:         {
+{
+"45
+[; ;GuardianTheme.c: 45:             toggleSound(&track1, 0, TMR0);
 [e ( _toggleSound (3 , , &U _track1 -> -> 0 `i `uc _TMR0 ]
-"52
-[; ;GuardianTheme.c: 52:             toggleSound(&track2, 1, TMR0);
+"46
+[; ;GuardianTheme.c: 46:             toggleSound(&track2, 1, TMR0);
 [e ( _toggleSound (3 , , &U _track2 -> -> 1 `i `uc _TMR0 ]
-"53
-[; ;GuardianTheme.c: 53:             counter++;
-[e ++ _counter -> -> 1 `i `us ]
-"54
-[; ;GuardianTheme.c: 54:         }
+"47
+[; ;GuardianTheme.c: 47:         }
 }
-[e :U 28 ]
+[e ++ _counter -> -> 1 `i `us ]
+[e $ < -> _counter `ui -> -> 6000 `i `ui 25  ]
+[e :U 26 ]
+}
 "49
-[; ;GuardianTheme.c: 49:         while (counter < 65535)
-[e $ < -> _counter `l -> 65535 `l 29  ]
-[e :U 30 ]
+[; ;GuardianTheme.c: 49:         track1.clocks = 6;
+[e = . _track1 0 -> -> 6 `i `uc ]
+"50
+[; ;GuardianTheme.c: 50:         track2.clocks = 6;
+[e = . _track2 0 -> -> 6 `i `uc ]
+"51
+[; ;GuardianTheme.c: 51:         for (counter = 0; counter<6000; counter++)
+{
+[e = _counter -> -> 0 `i `us ]
+[e $ < -> _counter `ui -> -> 6000 `i `ui 28  ]
+[e $U 29  ]
+[e :U 28 ]
+"52
+[; ;GuardianTheme.c: 52:         {
+{
+"53
+[; ;GuardianTheme.c: 53:             toggleSound(&track1, 0, TMR0);
+[e ( _toggleSound (3 , , &U _track1 -> -> 0 `i `uc _TMR0 ]
+"54
+[; ;GuardianTheme.c: 54:             toggleSound(&track2, 1, TMR0);
+[e ( _toggleSound (3 , , &U _track2 -> -> 1 `i `uc _TMR0 ]
 "55
-[; ;GuardianTheme.c: 55:     }
+[; ;GuardianTheme.c: 55:         }
+}
+[e ++ _counter -> -> 1 `i `us ]
+[e $ < -> _counter `ui -> -> 6000 `i `ui 28  ]
+[e :U 29 ]
+}
+"57
+[; ;GuardianTheme.c: 57:     }
 }
 [e :U 22 ]
 [e $U 23  ]
 [e :U 24 ]
-"56
-[; ;GuardianTheme.c: 56: }
+"58
+[; ;GuardianTheme.c: 58: }
 [e :UE 21 ]
 }

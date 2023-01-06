@@ -31,7 +31,7 @@
 [v main@track1 track1 `S24  1 a 2 5 ]
 "34
 [v main@counter counter `us  1 a 2 3 ]
-"56
+"58
 } 0
 "24 D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
 [v _toggleSound toggleSound `(v  1 e 1 0 ]
