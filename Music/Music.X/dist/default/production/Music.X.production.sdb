@@ -31,7 +31,7 @@
 [v main@track2 track2 `S24  1 a 2 9 ]
 "32
 [v main@track1 track1 `S24  1 a 2 7 ]
-"45
+"65
 } 0
 "36 D:\Files\Programing Stuff\C\Baremetal\Music-Player\Music\Music.X/MusicPlayer.h
 [v _playSound playSound `(v  1 e 1 0 ]

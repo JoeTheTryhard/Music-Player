@@ -8,12 +8,12 @@
 #ifndef MUSICPLAYER_H
 #define	MUSICPLAYER_H
 
-#define DURATION 6000 // Value must be between 0 and 65535
+#define DURATION 850 // Value must be between 0 and 65535
 
 void initialize()
 {
     TRIS = 0b1000;
-    OPTION = 0b11010101; //Set the correct prescaler for the option register, bit 3
+    OPTION = 0b11010110; //Set the correct prescaler for the option register, bit 3
 }
 
 struct Track

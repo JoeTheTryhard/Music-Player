@@ -33,13 +33,33 @@ void main(void)
     struct Track track2;
     while(1)
     {
-        track1.clocks = 50;
-        track2.clocks = 20;
-        playSound(&track1, &track2); 
-        playSound(&track1, &track2); 
-        track1.clocks = 2;
-        track2.clocks = 2;
-        playSound(&track1, &track2); 
+        track1.clocks = 16;
+        track2.clocks = 31;
+        playSound(&track1, &track2);
+        track1.clocks = 0;
+        track2.clocks = 0;
+        playSound(&track1, &track2);
+        playSound(&track1, &track2);
+        playSound(&track1, &track2);
+        track1.clocks = 10;
+        track2.clocks = 0;
+        playSound(&track1, &track2);
+        track1.clocks = 0;
+        track2.clocks = 0;
+        playSound(&track1, &track2);
+        playSound(&track1, &track2);
+        playSound(&track1, &track2);
+        track1.clocks = 8;
+        track2.clocks = 0;
+        playSound(&track1, &track2);
+        track1.clocks = 0;
+        track2.clocks = 0;
+        playSound(&track1, &track2);
+        track1.clocks = 10;
+        track2.clocks = 0;
+        playSound(&track1, &track2);
+        track1.clocks = 0;
+        track2.clocks = 0;
         playSound(&track1, &track2);
     }
 }

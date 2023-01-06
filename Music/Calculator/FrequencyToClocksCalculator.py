@@ -1,4 +1,5 @@
 import math
+
 def frequencyToPeriod(frequency):
     return 1.0/float(frequency)*1000000
 

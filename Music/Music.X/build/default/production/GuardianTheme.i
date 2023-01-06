@@ -409,7 +409,7 @@ extern __bank0 __bit __timeout;
 void initialize()
 {
     TRIS = 0b1000;
-    OPTION = 0b11010101;
+    OPTION = 0b11010110;
 }
 
 struct Track
@@ -431,7 +431,7 @@ void toggleSound(struct Track* track, unsigned char pinNumber, unsigned char ini
 
 void playSound(struct Track* track1, struct Track* track2)
 {
-    for (unsigned short counter = 0; counter<6000; counter++)
+    for (unsigned short counter = 0; counter<850; counter++)
     {
         toggleSound(track1, 0, TMR0);
         toggleSound(track2, 1, TMR0);
@@ -452,13 +452,33 @@ void main(void)
     struct Track track2;
     while(1)
     {
-        track1.clocks = 50;
-        track2.clocks = 20;
+        track1.clocks = 16;
+        track2.clocks = 31;
+        playSound(&track1, &track2);
+        track1.clocks = 0;
+        track2.clocks = 0;
         playSound(&track1, &track2);
         playSound(&track1, &track2);
-        track1.clocks = 2;
-        track2.clocks = 2;
         playSound(&track1, &track2);
+        track1.clocks = 10;
+        track2.clocks = 0;
+        playSound(&track1, &track2);
+        track1.clocks = 0;
+        track2.clocks = 0;
+        playSound(&track1, &track2);
+        playSound(&track1, &track2);
+        playSound(&track1, &track2);
+        track1.clocks = 8;
+        track2.clocks = 0;
+        playSound(&track1, &track2);
+        track1.clocks = 0;
+        track2.clocks = 0;
+        playSound(&track1, &track2);
+        track1.clocks = 10;
+        track2.clocks = 0;
+        playSound(&track1, &track2);
+        track1.clocks = 0;
+        track2.clocks = 0;
         playSound(&track1, &track2);
     }
 }
